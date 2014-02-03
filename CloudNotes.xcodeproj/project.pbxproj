@@ -1,0 +1,497 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D022578E189F20F90038232A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D022578D189F20F90038232A /* Cocoa.framework */; };
+		D0225798189F20F90038232A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0225796189F20F90038232A /* InfoPlist.strings */; };
+		D022579A189F20F90038232A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0225799189F20F90038232A /* main.m */; };
+		D022579E189F20F90038232A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D022579C189F20F90038232A /* Credits.rtf */; };
+		D02257A1189F20F90038232A /* OCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D02257A0189F20F90038232A /* OCAppDelegate.m */; };
+		D02257A4189F20F90038232A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D02257A2189F20F90038232A /* MainMenu.xib */; };
+		D02257A7189F20F90038232A /* CloudNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D02257A5189F20F90038232A /* CloudNotes.xcdatamodeld */; };
+		D02257A9189F20F90038232A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D02257A8189F20F90038232A /* Images.xcassets */; };
+		D02257B0189F20F90038232A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D02257AF189F20F90038232A /* XCTest.framework */; };
+		D02257B1189F20F90038232A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D022578D189F20F90038232A /* Cocoa.framework */; };
+		D02257B9189F20F90038232A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D02257B7189F20F90038232A /* InfoPlist.strings */; };
+		D02257BB189F20F90038232A /* CloudNotesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D02257BA189F20F90038232A /* CloudNotesTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D02257B2189F20F90038232A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0225782189F20F90038232A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0225789189F20F90038232A;
+			remoteInfo = CloudNotes;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D022578A189F20F90038232A /* CloudNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D022578D189F20F90038232A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D0225790189F20F90038232A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		D0225791189F20F90038232A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D0225792189F20F90038232A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D0225795189F20F90038232A /* CloudNotes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CloudNotes-Info.plist"; sourceTree = "<group>"; };
+		D0225797189F20F90038232A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D0225799189F20F90038232A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D022579B189F20F90038232A /* CloudNotes-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CloudNotes-Prefix.pch"; sourceTree = "<group>"; };
+		D022579D189F20F90038232A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		D022579F189F20F90038232A /* OCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCAppDelegate.h; sourceTree = "<group>"; };
+		D02257A0189F20F90038232A /* OCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCAppDelegate.m; sourceTree = "<group>"; };
+		D02257A3189F20F90038232A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		D02257A6189F20F90038232A /* CloudNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CloudNotes.xcdatamodel; sourceTree = "<group>"; };
+		D02257A8189F20F90038232A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D02257AE189F20F90038232A /* CloudNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloudNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D02257AF189F20F90038232A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D02257B6189F20F90038232A /* CloudNotesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CloudNotesTests-Info.plist"; sourceTree = "<group>"; };
+		D02257B8189F20F90038232A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D02257BA189F20F90038232A /* CloudNotesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CloudNotesTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0225787189F20F90038232A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D022578E189F20F90038232A /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D02257AB189F20F90038232A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D02257B1189F20F90038232A /* Cocoa.framework in Frameworks */,
+				D02257B0189F20F90038232A /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D0225781189F20F90038232A = {
+			isa = PBXGroup;
+			children = (
+				D0225793189F20F90038232A /* CloudNotes */,
+				D02257B4189F20F90038232A /* CloudNotesTests */,
+				D022578C189F20F90038232A /* Frameworks */,
+				D022578B189F20F90038232A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D022578B189F20F90038232A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D022578A189F20F90038232A /* CloudNotes.app */,
+				D02257AE189F20F90038232A /* CloudNotesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D022578C189F20F90038232A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D022578D189F20F90038232A /* Cocoa.framework */,
+				D02257AF189F20F90038232A /* XCTest.framework */,
+				D022578F189F20F90038232A /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D022578F189F20F90038232A /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D0225790189F20F90038232A /* AppKit.framework */,
+				D0225791189F20F90038232A /* CoreData.framework */,
+				D0225792189F20F90038232A /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		D0225793189F20F90038232A /* CloudNotes */ = {
+			isa = PBXGroup;
+			children = (
+				D022579F189F20F90038232A /* OCAppDelegate.h */,
+				D02257A0189F20F90038232A /* OCAppDelegate.m */,
+				D02257A2189F20F90038232A /* MainMenu.xib */,
+				D02257A8189F20F90038232A /* Images.xcassets */,
+				D02257A5189F20F90038232A /* CloudNotes.xcdatamodeld */,
+				D0225794189F20F90038232A /* Supporting Files */,
+			);
+			path = CloudNotes;
+			sourceTree = "<group>";
+		};
+		D0225794189F20F90038232A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0225795189F20F90038232A /* CloudNotes-Info.plist */,
+				D0225796189F20F90038232A /* InfoPlist.strings */,
+				D0225799189F20F90038232A /* main.m */,
+				D022579B189F20F90038232A /* CloudNotes-Prefix.pch */,
+				D022579C189F20F90038232A /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D02257B4189F20F90038232A /* CloudNotesTests */ = {
+			isa = PBXGroup;
+			children = (
+				D02257BA189F20F90038232A /* CloudNotesTests.m */,
+				D02257B5189F20F90038232A /* Supporting Files */,
+			);
+			path = CloudNotesTests;
+			sourceTree = "<group>";
+		};
+		D02257B5189F20F90038232A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D02257B6189F20F90038232A /* CloudNotesTests-Info.plist */,
+				D02257B7189F20F90038232A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D0225789189F20F90038232A /* CloudNotes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D02257BE189F20F90038232A /* Build configuration list for PBXNativeTarget "CloudNotes" */;
+			buildPhases = (
+				D0225786189F20F90038232A /* Sources */,
+				D0225787189F20F90038232A /* Frameworks */,
+				D0225788189F20F90038232A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CloudNotes;
+			productName = CloudNotes;
+			productReference = D022578A189F20F90038232A /* CloudNotes.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D02257AD189F20F90038232A /* CloudNotesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D02257C1189F20F90038232A /* Build configuration list for PBXNativeTarget "CloudNotesTests" */;
+			buildPhases = (
+				D02257AA189F20F90038232A /* Sources */,
+				D02257AB189F20F90038232A /* Frameworks */,
+				D02257AC189F20F90038232A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D02257B3189F20F90038232A /* PBXTargetDependency */,
+			);
+			name = CloudNotesTests;
+			productName = CloudNotesTests;
+			productReference = D02257AE189F20F90038232A /* CloudNotesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0225782189F20F90038232A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = OC;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Peter Hedlund";
+				TargetAttributes = {
+					D02257AD189F20F90038232A = {
+						TestTargetID = D0225789189F20F90038232A;
+					};
+				};
+			};
+			buildConfigurationList = D0225785189F20F90038232A /* Build configuration list for PBXProject "CloudNotes" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D0225781189F20F90038232A;
+			productRefGroup = D022578B189F20F90038232A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D0225789189F20F90038232A /* CloudNotes */,
+				D02257AD189F20F90038232A /* CloudNotesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0225788189F20F90038232A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0225798189F20F90038232A /* InfoPlist.strings in Resources */,
+				D02257A9189F20F90038232A /* Images.xcassets in Resources */,
+				D022579E189F20F90038232A /* Credits.rtf in Resources */,
+				D02257A4189F20F90038232A /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D02257AC189F20F90038232A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D02257B9189F20F90038232A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0225786189F20F90038232A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D02257A1189F20F90038232A /* OCAppDelegate.m in Sources */,
+				D022579A189F20F90038232A /* main.m in Sources */,
+				D02257A7189F20F90038232A /* CloudNotes.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D02257AA189F20F90038232A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D02257BB189F20F90038232A /* CloudNotesTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D02257B3189F20F90038232A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0225789189F20F90038232A /* CloudNotes */;
+			targetProxy = D02257B2189F20F90038232A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D0225796189F20F90038232A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0225797189F20F90038232A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D022579C189F20F90038232A /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D022579D189F20F90038232A /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		D02257A2189F20F90038232A /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D02257A3189F20F90038232A /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		D02257B7189F20F90038232A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D02257B8189F20F90038232A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D02257BC189F20F90038232A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D02257BD189F20F90038232A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D02257BF189F20F90038232A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CloudNotes/CloudNotes-Prefix.pch";
+				INFOPLIST_FILE = "CloudNotes/CloudNotes-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D02257C0189F20F90038232A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CloudNotes/CloudNotes-Prefix.pch";
+				INFOPLIST_FILE = "CloudNotes/CloudNotes-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D02257C2189F20F90038232A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CloudNotes.app/Contents/MacOS/CloudNotes";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CloudNotes/CloudNotes-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CloudNotesTests/CloudNotesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D02257C3189F20F90038232A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CloudNotes.app/Contents/MacOS/CloudNotes";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CloudNotes/CloudNotes-Prefix.pch";
+				INFOPLIST_FILE = "CloudNotesTests/CloudNotesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0225785189F20F90038232A /* Build configuration list for PBXProject "CloudNotes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D02257BC189F20F90038232A /* Debug */,
+				D02257BD189F20F90038232A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D02257BE189F20F90038232A /* Build configuration list for PBXNativeTarget "CloudNotes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D02257BF189F20F90038232A /* Debug */,
+				D02257C0189F20F90038232A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D02257C1189F20F90038232A /* Build configuration list for PBXNativeTarget "CloudNotesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D02257C2189F20F90038232A /* Debug */,
+				D02257C3189F20F90038232A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D02257A5189F20F90038232A /* CloudNotes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D02257A6189F20F90038232A /* CloudNotes.xcdatamodel */,
+			);
+			currentVersion = D02257A6189F20F90038232A /* CloudNotes.xcdatamodel */;
+			path = CloudNotes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D0225782189F20F90038232A /* Project object */;
+}
