@@ -17,6 +17,9 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+    self.notesViewController = [[OCNotesViewController alloc] initWithNibName:@"OCNotesViewController" bundle:nil];
+    [self.window.contentView addSubview:self.notesViewController.view];
+    self.notesViewController.view.frame = ((NSView*)self.window.contentView).bounds;
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "com.peterandlinda.CloudNotes" in the user's Application Support directory.
