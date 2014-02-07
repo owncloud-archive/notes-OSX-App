@@ -10,4 +10,13 @@
 
 @interface OCNotesViewController : NSViewController
 
+@property (strong) IBOutlet NSTableView *tableView;
+@property (strong) IBOutlet NSScrollView *contentTextView;
+@property (strong, nonatomic) NSManagedObjectContext *context;
+@property (strong) IBOutlet NSArrayController *notesArrayController;
+
+- (IBAction)doSync:(id)sender;
+- (IBAction)doAdd:(id)sender;
+- (IBAction)doDelete:(id)sender;
+
 @end

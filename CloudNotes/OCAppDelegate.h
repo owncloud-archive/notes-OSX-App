@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <CoreData/CoreData.h>
 #import "OCNotesViewController.h"
 
 @interface OCAppDelegate : NSObject <NSApplicationDelegate>
@@ -17,6 +18,7 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) OCNotesViewController *notesViewController;
+//@property (nonatomic, retain) NSFetchedResultsController *notesFetchedResultsController;
 
 - (IBAction)saveAction:(id)sender;
 

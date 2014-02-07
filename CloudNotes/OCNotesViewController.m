@@ -7,6 +7,8 @@
 //
 
 #import "OCNotesViewController.h"
+#import "OCNotesHelper.h"
+#import "Note.h"
 
 @interface OCNotesViewController ()
 
@@ -21,6 +23,22 @@
         // Initialization code here.
     }
     return self;
+}
+
+- (IBAction)doSync:(id)sender {
+    [[OCNotesHelper sharedHelper] sync];
+}
+
+- (IBAction)doAdd:(id)sender {
+    [[OCNotesHelper sharedHelper] addNote];
+}
+
+- (IBAction)doDelete:(id)sender {
+    Note *noteToDelete = nil;
+    if ([[self.notesArrayController selectedObjects] count] > 0) {
+        noteToDelete = (Note*)[[self.notesArrayController selectedObjects] objectAtIndex:0];
+        [[OCNotesHelper sharedHelper] deleteNote:noteToDelete];
+    }
 }
 
 @end

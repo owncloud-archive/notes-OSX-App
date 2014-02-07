@@ -13,7 +13,6 @@
 		D022579E189F20F90038232A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D022579C189F20F90038232A /* Credits.rtf */; };
 		D02257A1189F20F90038232A /* OCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D02257A0189F20F90038232A /* OCAppDelegate.m */; };
 		D02257A4189F20F90038232A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D02257A2189F20F90038232A /* MainMenu.xib */; };
-		D02257A7189F20F90038232A /* CloudNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D02257A5189F20F90038232A /* CloudNotes.xcdatamodeld */; };
 		D02257A9189F20F90038232A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D02257A8189F20F90038232A /* Images.xcassets */; };
 		D02257B0189F20F90038232A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D02257AF189F20F90038232A /* XCTest.framework */; };
 		D02257B1189F20F90038232A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D022578D189F20F90038232A /* Cocoa.framework */; };
@@ -21,6 +20,23 @@
 		D02257BB189F20F90038232A /* CloudNotesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D02257BA189F20F90038232A /* CloudNotesTests.m */; };
 		D02257C718A1C3EF0038232A /* OCNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D02257C518A1C3EF0038232A /* OCNotesViewController.m */; };
 		D02257C818A1C3EF0038232A /* OCNotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D02257C618A1C3EF0038232A /* OCNotesViewController.xib */; };
+		D02257D118A1D2F90038232A /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = D02257CB18A1D2F90038232A /* Note.m */; };
+		D02257D218A1D2F90038232A /* OCAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D02257CD18A1D2F90038232A /* OCAPIClient.m */; };
+		D02257D318A1D2F90038232A /* OCNotesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D02257CF18A1D2F90038232A /* OCNotesHelper.m */; };
+		D02257E818A1D3640038232A /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D02257D618A1D3640038232A /* AFHTTPRequestOperation.m */; };
+		D02257E918A1D3640038232A /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D02257D818A1D3640038232A /* AFHTTPRequestOperationManager.m */; };
+		D02257EA18A1D3640038232A /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D02257DA18A1D3640038232A /* AFHTTPSessionManager.m */; };
+		D02257EB18A1D3640038232A /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D02257DD18A1D3640038232A /* AFNetworkReachabilityManager.m */; };
+		D02257EC18A1D3640038232A /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = D02257DF18A1D3640038232A /* AFSecurityPolicy.m */; };
+		D02257ED18A1D3640038232A /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D02257E118A1D3640038232A /* AFURLConnectionOperation.m */; };
+		D02257EE18A1D3640038232A /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D02257E318A1D3640038232A /* AFURLRequestSerialization.m */; };
+		D02257EF18A1D3640038232A /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D02257E518A1D3640038232A /* AFURLResponseSerialization.m */; };
+		D02257F018A1D3640038232A /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D02257E718A1D3640038232A /* AFURLSessionManager.m */; };
+		D02257F618A1D9AA0038232A /* NSDictionary+HandleNull.m in Sources */ = {isa = PBXBuildFile; fileRef = D02257F518A1D9AA0038232A /* NSDictionary+HandleNull.m */; };
+		D02257F818A1DB6E0038232A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D02257F718A1DB6E0038232A /* SystemConfiguration.framework */; };
+		D02257FA18A1DB7A0038232A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D02257F918A1DB7A0038232A /* Security.framework */; };
+		D02257FC18A1DB840038232A /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D02257FB18A1DB840038232A /* CoreServices.framework */; };
+		D02257FF18A457E60038232A /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D02257FD18A457E50038232A /* Notes.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +63,6 @@
 		D022579F189F20F90038232A /* OCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCAppDelegate.h; sourceTree = "<group>"; };
 		D02257A0189F20F90038232A /* OCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCAppDelegate.m; sourceTree = "<group>"; };
 		D02257A3189F20F90038232A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		D02257A6189F20F90038232A /* CloudNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CloudNotes.xcdatamodel; sourceTree = "<group>"; };
 		D02257A8189F20F90038232A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D02257AE189F20F90038232A /* CloudNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloudNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D02257AF189F20F90038232A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -57,6 +72,37 @@
 		D02257C418A1C3EF0038232A /* OCNotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCNotesViewController.h; sourceTree = "<group>"; };
 		D02257C518A1C3EF0038232A /* OCNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCNotesViewController.m; sourceTree = "<group>"; };
 		D02257C618A1C3EF0038232A /* OCNotesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OCNotesViewController.xib; sourceTree = "<group>"; };
+		D02257CA18A1D2F90038232A /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		D02257CB18A1D2F90038232A /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
+		D02257CC18A1D2F90038232A /* OCAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCAPIClient.h; sourceTree = "<group>"; };
+		D02257CD18A1D2F90038232A /* OCAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCAPIClient.m; sourceTree = "<group>"; };
+		D02257CE18A1D2F90038232A /* OCNotesHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCNotesHelper.h; sourceTree = "<group>"; };
+		D02257CF18A1D2F90038232A /* OCNotesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCNotesHelper.m; sourceTree = "<group>"; };
+		D02257D518A1D3640038232A /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		D02257D618A1D3640038232A /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		D02257D718A1D3640038232A /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		D02257D818A1D3640038232A /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		D02257D918A1D3640038232A /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		D02257DA18A1D3640038232A /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		D02257DB18A1D3640038232A /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		D02257DC18A1D3640038232A /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		D02257DD18A1D3640038232A /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		D02257DE18A1D3640038232A /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		D02257DF18A1D3640038232A /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		D02257E018A1D3640038232A /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		D02257E118A1D3640038232A /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		D02257E218A1D3640038232A /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		D02257E318A1D3640038232A /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		D02257E418A1D3640038232A /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		D02257E518A1D3640038232A /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		D02257E618A1D3640038232A /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		D02257E718A1D3640038232A /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		D02257F418A1D9AA0038232A /* NSDictionary+HandleNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+HandleNull.h"; sourceTree = "<group>"; };
+		D02257F518A1D9AA0038232A /* NSDictionary+HandleNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+HandleNull.m"; sourceTree = "<group>"; };
+		D02257F718A1DB6E0038232A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D02257F918A1DB7A0038232A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D02257FB18A1DB840038232A /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		D02257FE18A457E60038232A /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +110,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D02257FC18A1DB840038232A /* CoreServices.framework in Frameworks */,
+				D02257FA18A1DB7A0038232A /* Security.framework in Frameworks */,
+				D02257F818A1DB6E0038232A /* SystemConfiguration.framework in Frameworks */,
 				D022578E189F20F90038232A /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +132,7 @@
 		D0225781189F20F90038232A = {
 			isa = PBXGroup;
 			children = (
+				D02257D418A1D3640038232A /* AFNetworking */,
 				D0225793189F20F90038232A /* CloudNotes */,
 				D02257B4189F20F90038232A /* CloudNotesTests */,
 				D022578C189F20F90038232A /* Frameworks */,
@@ -102,6 +152,9 @@
 		D022578C189F20F90038232A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D02257FB18A1DB840038232A /* CoreServices.framework */,
+				D02257F918A1DB7A0038232A /* Security.framework */,
+				D02257F718A1DB6E0038232A /* SystemConfiguration.framework */,
 				D022578D189F20F90038232A /* Cocoa.framework */,
 				D02257AF189F20F90038232A /* XCTest.framework */,
 				D022578F189F20F90038232A /* Other Frameworks */,
@@ -122,14 +175,22 @@
 		D0225793189F20F90038232A /* CloudNotes */ = {
 			isa = PBXGroup;
 			children = (
+				D02257FD18A457E50038232A /* Notes.xcdatamodeld */,
+				D02257CA18A1D2F90038232A /* Note.h */,
+				D02257CB18A1D2F90038232A /* Note.m */,
+				D02257CC18A1D2F90038232A /* OCAPIClient.h */,
+				D02257CD18A1D2F90038232A /* OCAPIClient.m */,
+				D02257CE18A1D2F90038232A /* OCNotesHelper.h */,
+				D02257CF18A1D2F90038232A /* OCNotesHelper.m */,
 				D022579F189F20F90038232A /* OCAppDelegate.h */,
 				D02257A0189F20F90038232A /* OCAppDelegate.m */,
 				D02257A2189F20F90038232A /* MainMenu.xib */,
 				D02257C418A1C3EF0038232A /* OCNotesViewController.h */,
 				D02257C518A1C3EF0038232A /* OCNotesViewController.m */,
 				D02257C618A1C3EF0038232A /* OCNotesViewController.xib */,
+				D02257F418A1D9AA0038232A /* NSDictionary+HandleNull.h */,
+				D02257F518A1D9AA0038232A /* NSDictionary+HandleNull.m */,
 				D02257A8189F20F90038232A /* Images.xcassets */,
-				D02257A5189F20F90038232A /* CloudNotes.xcdatamodeld */,
 				D0225794189F20F90038232A /* Supporting Files */,
 			);
 			path = CloudNotes;
@@ -163,6 +224,33 @@
 				D02257B7189F20F90038232A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D02257D418A1D3640038232A /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				D02257D518A1D3640038232A /* AFHTTPRequestOperation.h */,
+				D02257D618A1D3640038232A /* AFHTTPRequestOperation.m */,
+				D02257D718A1D3640038232A /* AFHTTPRequestOperationManager.h */,
+				D02257D818A1D3640038232A /* AFHTTPRequestOperationManager.m */,
+				D02257D918A1D3640038232A /* AFHTTPSessionManager.h */,
+				D02257DA18A1D3640038232A /* AFHTTPSessionManager.m */,
+				D02257DB18A1D3640038232A /* AFNetworking.h */,
+				D02257DC18A1D3640038232A /* AFNetworkReachabilityManager.h */,
+				D02257DD18A1D3640038232A /* AFNetworkReachabilityManager.m */,
+				D02257DE18A1D3640038232A /* AFSecurityPolicy.h */,
+				D02257DF18A1D3640038232A /* AFSecurityPolicy.m */,
+				D02257E018A1D3640038232A /* AFURLConnectionOperation.h */,
+				D02257E118A1D3640038232A /* AFURLConnectionOperation.m */,
+				D02257E218A1D3640038232A /* AFURLRequestSerialization.h */,
+				D02257E318A1D3640038232A /* AFURLRequestSerialization.m */,
+				D02257E418A1D3640038232A /* AFURLResponseSerialization.h */,
+				D02257E518A1D3640038232A /* AFURLResponseSerialization.m */,
+				D02257E618A1D3640038232A /* AFURLSessionManager.h */,
+				D02257E718A1D3640038232A /* AFURLSessionManager.m */,
+			);
+			name = AFNetworking;
+			path = AFNetworking/AFNetworking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,10 +353,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D02257ED18A1D3640038232A /* AFURLConnectionOperation.m in Sources */,
 				D02257C718A1C3EF0038232A /* OCNotesViewController.m in Sources */,
 				D02257A1189F20F90038232A /* OCAppDelegate.m in Sources */,
+				D02257EF18A1D3640038232A /* AFURLResponseSerialization.m in Sources */,
+				D02257D118A1D2F90038232A /* Note.m in Sources */,
+				D02257EE18A1D3640038232A /* AFURLRequestSerialization.m in Sources */,
+				D02257FF18A457E60038232A /* Notes.xcdatamodeld in Sources */,
+				D02257EC18A1D3640038232A /* AFSecurityPolicy.m in Sources */,
+				D02257E818A1D3640038232A /* AFHTTPRequestOperation.m in Sources */,
+				D02257F018A1D3640038232A /* AFURLSessionManager.m in Sources */,
 				D022579A189F20F90038232A /* main.m in Sources */,
-				D02257A7189F20F90038232A /* CloudNotes.xcdatamodeld in Sources */,
+				D02257D318A1D2F90038232A /* OCNotesHelper.m in Sources */,
+				D02257F618A1D9AA0038232A /* NSDictionary+HandleNull.m in Sources */,
+				D02257EA18A1D3640038232A /* AFHTTPSessionManager.m in Sources */,
+				D02257D218A1D2F90038232A /* OCAPIClient.m in Sources */,
+				D02257EB18A1D3640038232A /* AFNetworkReachabilityManager.m in Sources */,
+				D02257E918A1D3640038232A /* AFHTTPRequestOperationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,7 +458,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -389,7 +490,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -402,7 +503,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CloudNotes/CloudNotes-Prefix.pch";
 				INFOPLIST_FILE = "CloudNotes/CloudNotes-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -416,7 +517,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CloudNotes/CloudNotes-Prefix.pch";
 				INFOPLIST_FILE = "CloudNotes/CloudNotes-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -493,13 +594,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D02257A5189F20F90038232A /* CloudNotes.xcdatamodeld */ = {
+		D02257FD18A457E50038232A /* Notes.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D02257A6189F20F90038232A /* CloudNotes.xcdatamodel */,
+				D02257FE18A457E60038232A /* Notes.xcdatamodel */,
 			);
-			currentVersion = D02257A6189F20F90038232A /* CloudNotes.xcdatamodel */;
-			path = CloudNotes.xcdatamodeld;
+			currentVersion = D02257FE18A457E60038232A /* Notes.xcdatamodel */;
+			path = Notes.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
