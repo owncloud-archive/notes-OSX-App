@@ -45,12 +45,36 @@
     return NO;
 }
 
-- (CGFloat)splitView:(NSSplitView *)splitView constrainMinCoordinate:(CGFloat)proposedMin ofSubviewAt:(NSInteger)dividerIndex {
-    return 200;
+#pragma mark - Split View Delegate
+
+- (CGFloat)splitView:(NSSplitView *)splitView constrainMinCoordinate:(CGFloat)proposedCoordinate ofSubviewAt:(int)index
+{
+	return proposedCoordinate + 120;
 }
 
-- (CGFloat)splitView:(NSSplitView *)splitView constrainMaxCoordinate:(CGFloat)proposedMax ofSubviewAt:(NSInteger)dividerIndex {
-    return 500;
+- (CGFloat)splitView:(NSSplitView *)splitView constrainMaxCoordinate:(CGFloat)proposedCoordinate ofSubviewAt:(int)index
+{
+	return proposedCoordinate - 120;
+}
+
+- (void)splitView:(NSSplitView *)sender resizeSubviewsWithOldSize:(NSSize)oldSize
+{
+	NSRect newFrame = [sender frame]; // get the new size of the whole splitView
+	NSView *left = [[sender subviews] objectAtIndex:0];
+	NSRect leftFrame = [left frame];
+	NSView *right = [[sender subviews] objectAtIndex:1];
+	NSRect rightFrame = [right frame];
+    
+	CGFloat dividerThickness = [sender dividerThickness];
+    
+	leftFrame.size.height = newFrame.size.height;
+    
+	rightFrame.size.width = newFrame.size.width - leftFrame.size.width - dividerThickness;
+	rightFrame.size.height = newFrame.size.height;
+	rightFrame.origin.x = leftFrame.size.width + dividerThickness;
+    
+	[left setFrame:leftFrame];
+	[right setFrame:rightFrame];
 }
 
 - (NSArray *)idSortDescriptor {

@@ -16,6 +16,11 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize managedObjectContext = _managedObjectContext;
 
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication*)sender
+{
+	return YES;
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
@@ -29,7 +34,10 @@
     [self.notesViewController.notesArrayController fetch:self.notesViewController];
     [self.notesViewController.tableView reloadData];
     [self.notesViewController.splitView loadLayoutWithName:self.notesViewController.splitView.autosaveName];
+    [self.notesViewController.tableView setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleSourceList];
 
+    [[self window] setAutorecalculatesContentBorderThickness:YES forEdge:NSMinYEdge];
+	[[self window] setContentBorderThickness:30 forEdge:NSMinYEdge];
 }
 
 // Returns the NSUndoManager for the application. In this case, the manager returned is that of the managed object context for the application.
