@@ -52,4 +52,9 @@
 - (CGFloat)splitView:(NSSplitView *)splitView constrainMaxCoordinate:(CGFloat)proposedMax ofSubviewAt:(NSInteger)dividerIndex {
     return 500;
 }
+
+- (NSArray *)idSortDescriptor {
+    return @[[NSSortDescriptor sortDescriptorWithKey:@"myId" ascending:NO]];
+}
+
 @end

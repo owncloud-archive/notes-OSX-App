@@ -88,7 +88,7 @@
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
                                     <connections>
-                                        <action selector="fetch:" target="V9P-Ft-aw9" id="BRP-g9-trU"/>
+                                        <action selector="doSync:" target="-2" id="zaI-e0-pOt"/>
                                     </connections>
                                 </button>
                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fLn-KU-bui">
@@ -200,6 +200,7 @@
         <arrayController mode="entity" entityName="Note" id="V9P-Ft-aw9" userLabel="NotesArrayController">
             <connections>
                 <binding destination="-2" name="managedObjectContext" keyPath="context" id="MjW-NB-Xfw"/>
+                <binding destination="-2" name="sortDescriptors" keyPath="idSortDescriptor" id="g1l-C3-THC"/>
             </connections>
         </arrayController>
         <userDefaultsController representsSharedInstance="YES" id="Lsj-7l-adT"/>

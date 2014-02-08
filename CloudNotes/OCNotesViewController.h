@@ -15,6 +15,7 @@
 @property (strong, nonatomic) NSManagedObjectContext *context;
 @property (strong) IBOutlet NSArrayController *notesArrayController;
 @property (strong) IBOutlet NSSplitView *splitView;
+@property (strong, readonly) NSArray *idSortDescriptor;
 
 - (IBAction)doSync:(id)sender;
 - (IBAction)doAdd:(id)sender;
