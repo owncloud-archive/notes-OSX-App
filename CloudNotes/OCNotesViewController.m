@@ -10,7 +10,9 @@
 #import "OCNotesHelper.h"
 #import "Note.h"
 
-@interface OCNotesViewController ()
+@interface OCNotesViewController () {
+    NSTimer *editingTimer;
+}
 
 @end
 
@@ -79,6 +81,28 @@
 
 - (NSArray *)idSortDescriptor {
     return @[[NSSortDescriptor sortDescriptorWithKey:@"myId" ascending:NO]];
+}
+
+#pragma mark - Text View Delegate
+
+- (void)textDidChange:(NSNotification *)obj {
+    if (editingTimer) {
+        [editingTimer invalidate];
+        editingTimer = nil;
+    }
+    editingTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(updateText:) userInfo:nil repeats:NO];
+}
+
+- (void)updateText:(NSTimer*)timer {
+    NSLog(@"Ready to update text");
+    Note *noteToUpdate = nil;
+    if ([[self.notesArrayController selectedObjects] count] > 0) {
+        noteToUpdate = (Note*)[[self.notesArrayController selectedObjects] objectAtIndex:0];
+        NSLog(@"Content: %@", self.contentTextView.string);
+        [noteToUpdate setContent:[NSString stringWithString:self.contentTextView.string]];
+        NSLog(@"Note Content %@", noteToUpdate.content);
+        [[OCNotesHelper sharedHelper] updateNote:noteToUpdate];
+    }
 }
 
 @end

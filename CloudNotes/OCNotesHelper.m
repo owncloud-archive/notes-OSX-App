@@ -416,9 +416,10 @@
 - (void)updateNote:(Note*)note {
     if ([OCAPIClient sharedClient].reachabilityManager.isReachable) {
         //online
-        NSDictionary *params = @{@"content": note.content};
+        __block Note *blockNote = (Note*)[self.context objectWithID:note.objectID];
+        NSDictionary *params = @{@"content": blockNote.content};
+        NSLog(@"Params: %@", params);
         NSString *path = [NSString stringWithFormat:@"notes/%@", [note.myId stringValue]];
-        __block Note *blockNote = note;
         
         [[OCAPIClient sharedClient] PUT:path parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
             //NSLog(@"Note: %@", responseObject);

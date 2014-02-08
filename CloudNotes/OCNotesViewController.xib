@@ -7,7 +7,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="OCNotesViewController">
             <connections>
-                <outlet property="contentTextView" destination="w1D-I9-qcd" id="E0z-x2-NKr"/>
+                <outlet property="contentTextVIew" destination="9Wp-Ba-H6n" id="guS-Y1-DPs"/>
+                <outlet property="contentTextView" destination="9Wp-Ba-H6n" id="O4H-G2-XNh"/>
                 <outlet property="notesArrayController" destination="V9P-Ft-aw9" id="lLb-qd-4li"/>
                 <outlet property="splitView" destination="r6l-vz-fBK" id="Q4L-jB-YK3"/>
                 <outlet property="tableView" destination="Iwf-9S-Onq" id="U6B-m0-jrk"/>
@@ -140,7 +141,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="309" height="323"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="9Wp-Ba-H6n">
+                                            <textView importsGraphics="NO" richText="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="9Wp-Ba-H6n">
                                                 <rect key="frame" x="0.0" y="0.0" width="309" height="323"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -151,6 +152,7 @@
                                                 <size key="maxSize" width="463" height="10000000"/>
                                                 <connections>
                                                     <binding destination="V9P-Ft-aw9" name="attributedString" keyPath="selection.content" id="Bbl-PI-vPP"/>
+                                                    <outlet property="delegate" destination="-2" id="naF-96-Wds"/>
                                                 </connections>
                                             </textView>
                                         </subviews>

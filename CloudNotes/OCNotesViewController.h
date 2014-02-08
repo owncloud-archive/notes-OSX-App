@@ -8,14 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface OCNotesViewController : NSViewController
+@interface OCNotesViewController : NSViewController <NSTextFieldDelegate>
 
 @property (strong) IBOutlet NSTableView *tableView;
-@property (strong) IBOutlet NSScrollView *contentTextView;
 @property (strong, nonatomic) NSManagedObjectContext *context;
 @property (strong) IBOutlet NSArrayController *notesArrayController;
 @property (strong) IBOutlet NSSplitView *splitView;
 @property (strong, readonly) NSArray *idSortDescriptor;
+@property (strong) IBOutlet NSTextView *contentTextView;
 
 - (IBAction)doSync:(id)sender;
 - (IBAction)doAdd:(id)sender;
