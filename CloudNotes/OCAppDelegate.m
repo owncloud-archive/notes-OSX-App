@@ -8,6 +8,7 @@
 
 #import "OCAppDelegate.h"
 #import "OCNotesHelper.h"
+#import "NSSplitView+SaveLayout.h"
 
 @implementation OCAppDelegate
 
@@ -19,11 +20,16 @@
 {
     // Insert code here to initialize your application
     self.notesViewController = [[OCNotesViewController alloc] initWithNibName:@"OCNotesViewController" bundle:nil];
-    [self.window.contentView addSubview:self.notesViewController.view];
-    self.notesViewController.view.frame = ((NSView*)self.window.contentView).bounds;
+    NSView *mySubview = self.notesViewController.view;
+    [self.window.contentView addSubview:mySubview];
+    [mySubview setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [[[self window] contentView] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[mySubview]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(mySubview)]];
+    [[[self window] contentView] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[mySubview]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(mySubview)]];
     self.notesViewController.context = [[OCNotesHelper sharedHelper] context];
     [self.notesViewController.notesArrayController fetch:self.notesViewController];
     [self.notesViewController.tableView reloadData];
+    [self.notesViewController.splitView loadLayoutWithName:self.notesViewController.splitView.autosaveName];
+
 }
 
 // Returns the NSUndoManager for the application. In this case, the manager returned is that of the managed object context for the application.
@@ -49,6 +55,7 @@
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
 {
     // Save changes in the application's managed object context before the application terminates.
+    [self.notesViewController.splitView saveLayoutWithName:self.notesViewController.splitView.autosaveName];
     
     if (!_managedObjectContext) {
         return NSTerminateNow;

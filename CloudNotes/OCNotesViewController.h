@@ -14,6 +14,7 @@
 @property (strong) IBOutlet NSScrollView *contentTextView;
 @property (strong, nonatomic) NSManagedObjectContext *context;
 @property (strong) IBOutlet NSArrayController *notesArrayController;
+@property (strong) IBOutlet NSSplitView *splitView;
 
 - (IBAction)doSync:(id)sender;
 - (IBAction)doAdd:(id)sender;

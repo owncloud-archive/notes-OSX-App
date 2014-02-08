@@ -37,6 +37,7 @@
 		D02257FA18A1DB7A0038232A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D02257F918A1DB7A0038232A /* Security.framework */; };
 		D02257FC18A1DB840038232A /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D02257FB18A1DB840038232A /* CoreServices.framework */; };
 		D02257FF18A457E60038232A /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D02257FD18A457E50038232A /* Notes.xcdatamodeld */; };
+		D022580218A5B4260038232A /* NSSplitView+SaveLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D022580118A5B4260038232A /* NSSplitView+SaveLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,8 @@
 		D02257F918A1DB7A0038232A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D02257FB18A1DB840038232A /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		D02257FE18A457E60038232A /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
+		D022580018A5B4260038232A /* NSSplitView+SaveLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSplitView+SaveLayout.h"; sourceTree = "<group>"; };
+		D022580118A5B4260038232A /* NSSplitView+SaveLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSplitView+SaveLayout.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +193,8 @@
 				D02257C618A1C3EF0038232A /* OCNotesViewController.xib */,
 				D02257F418A1D9AA0038232A /* NSDictionary+HandleNull.h */,
 				D02257F518A1D9AA0038232A /* NSDictionary+HandleNull.m */,
+				D022580018A5B4260038232A /* NSSplitView+SaveLayout.h */,
+				D022580118A5B4260038232A /* NSSplitView+SaveLayout.m */,
 				D02257A8189F20F90038232A /* Images.xcassets */,
 				D0225794189F20F90038232A /* Supporting Files */,
 			);
@@ -360,6 +365,7 @@
 				D02257D118A1D2F90038232A /* Note.m in Sources */,
 				D02257EE18A1D3640038232A /* AFURLRequestSerialization.m in Sources */,
 				D02257FF18A457E60038232A /* Notes.xcdatamodeld in Sources */,
+				D022580218A5B4260038232A /* NSSplitView+SaveLayout.m in Sources */,
 				D02257EC18A1D3640038232A /* AFSecurityPolicy.m in Sources */,
 				D02257E818A1D3640038232A /* AFHTTPRequestOperation.m in Sources */,
 				D02257F018A1D3640038232A /* AFURLSessionManager.m in Sources */,
@@ -582,6 +588,7 @@
 				D02257C0189F20F90038232A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D02257C1189F20F90038232A /* Build configuration list for PBXNativeTarget "CloudNotesTests" */ = {
 			isa = XCConfigurationList;
@@ -590,6 +597,7 @@
 				D02257C3189F20F90038232A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
