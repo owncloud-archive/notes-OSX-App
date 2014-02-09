@@ -74,14 +74,14 @@
                             <rect key="frame" x="0.0" y="0.0" width="314" height="323"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="42" horizontalPageScroll="10" verticalLineScroll="42" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xni-Ax-r4B">
+                                <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="33" horizontalPageScroll="10" verticalLineScroll="33" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xni-Ax-r4B">
                                     <rect key="frame" x="0.0" y="0.0" width="314" height="323"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <clipView key="contentView" id="oTN-qe-Tdo">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="323"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="40" id="Iwf-9S-Onq">
+                                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="31" id="Iwf-9S-Onq">
                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="323"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <size key="intercellSpacing" width="3" height="2"/>
@@ -94,14 +94,17 @@
                                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
                                                         </tableHeaderCell>
-                                                        <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="RGQ-Oc-Yag">
+                                                        <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" allowsUndo="NO" alignment="left" title="Text Cell" id="RGQ-Oc-Yag">
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                            <connections>
+                                                                <binding destination="V9P-Ft-aw9" name="value" keyPath="selection.title" id="3sh-hx-xdo"/>
+                                                            </connections>
                                                         </textFieldCell>
                                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                         <connections>
-                                                            <binding destination="V9P-Ft-aw9" name="value" keyPath="arrangedObjects.title" id="96p-iO-5Ps"/>
+                                                            <binding destination="V9P-Ft-aw9" name="value" keyPath="arrangedObjects.title" id="wOc-TH-GU3"/>
                                                         </connections>
                                                     </tableColumn>
                                                 </tableColumns>
@@ -141,7 +144,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="309" height="323"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <textView importsGraphics="NO" richText="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="9Wp-Ba-H6n">
+                                            <textView importsGraphics="NO" richText="NO" horizontallyResizable="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="9Wp-Ba-H6n">
                                                 <rect key="frame" x="0.0" y="0.0" width="309" height="323"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -151,7 +154,7 @@
                                                 <size key="minSize" width="309" height="323"/>
                                                 <size key="maxSize" width="463" height="10000000"/>
                                                 <connections>
-                                                    <binding destination="V9P-Ft-aw9" name="attributedString" keyPath="selection.content" id="Bbl-PI-vPP"/>
+                                                    <binding destination="V9P-Ft-aw9" name="attributedString" keyPath="selection.content" id="md5-kV-doi"/>
                                                     <outlet property="delegate" destination="-2" id="naF-96-Wds"/>
                                                 </connections>
                                             </textView>
@@ -184,12 +187,34 @@
                         <outlet property="delegate" destination="-2" id="Vgj-8A-KEy"/>
                     </connections>
                 </splitView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u5F-Oe-FCB">
+                    <rect key="frame" x="86" y="5" width="520" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="gbf-hL-UpQ"/>
+                    </constraints>
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Modified:" usesSingleLineMode="YES" id="amx-Dx-nuc">
+                        <font key="font" size="11" name="LucidaGrande"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="V9P-Ft-aw9" name="value" keyPath="selection.modified" id="Z3X-ED-xAl">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">OCDateTransformer</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
             </subviews>
             <constraints>
+                <constraint firstItem="u5F-Oe-FCB" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="88" id="0P3-Gj-oGz"/>
                 <constraint firstAttribute="bottom" secondItem="r6l-vz-fBK" secondAttribute="bottom" constant="30" id="2Lb-5p-7MC"/>
                 <constraint firstAttribute="trailing" secondItem="r6l-vz-fBK" secondAttribute="trailing" id="4ZH-Ta-pRu"/>
+                <constraint firstAttribute="bottom" secondItem="u5F-Oe-FCB" secondAttribute="bottom" constant="5" id="DgH-yX-igh"/>
                 <constraint firstItem="r6l-vz-fBK" firstAttribute="top" secondItem="1" secondAttribute="top" id="L13-Ke-1fO"/>
                 <constraint firstAttribute="bottom" secondItem="C9J-3s-EUU" secondAttribute="bottom" constant="5" id="NLB-ae-qcP"/>
+                <constraint firstAttribute="trailing" secondItem="u5F-Oe-FCB" secondAttribute="trailing" constant="20" id="P7Q-a0-QLC"/>
                 <constraint firstItem="oD5-Po-Ll4" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="57" id="Rv6-S7-uyZ"/>
                 <constraint firstItem="r6l-vz-fBK" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="Rz3-ux-CoT"/>
                 <constraint firstAttribute="bottom" secondItem="oD5-Po-Ll4" secondAttribute="bottom" constant="5" id="YHg-jA-BcJ"/>
@@ -201,7 +226,7 @@
         <arrayController mode="entity" entityName="Note" id="V9P-Ft-aw9" userLabel="NotesArrayController">
             <connections>
                 <binding destination="-2" name="managedObjectContext" keyPath="context" id="MjW-NB-Xfw"/>
-                <binding destination="-2" name="sortDescriptors" keyPath="idSortDescriptor" id="g1l-C3-THC"/>
+                <binding destination="-2" name="sortDescriptors" keyPath="idSortDescriptor" id="Nwz-dc-cXY"/>
             </connections>
         </arrayController>
         <userDefaultsController representsSharedInstance="YES" id="Lsj-7l-adT"/>

@@ -37,6 +37,12 @@
     [self.notesViewController.splitView loadLayoutWithName:self.notesViewController.splitView.autosaveName];
     [self.notesViewController.tableView setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleSourceList];
 
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"SyncOnStart"]) {
+        [self.notesViewController doSync:nil];
+    }
+    if ([[NSUserDefaults standardUserDefaults] stringForKey:@"Server"].length == 0) {
+        [self doPreferences:nil];
+    }
     [[self window] setAutorecalculatesContentBorderThickness:YES forEdge:NSMinYEdge];
 	[[self window] setContentBorderThickness:30 forEdge:NSMinYEdge];
 }

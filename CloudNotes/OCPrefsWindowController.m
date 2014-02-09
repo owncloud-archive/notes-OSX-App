@@ -51,8 +51,12 @@ static const NSString *rootPath = @"index.php/apps/notes/api/v0.2/";
     } else {
         status = @"Currently not connected to an ownCloud Notes server";
     }
+    
     self.statusLabel.stringValue = status;
     self.serverTextField.stringValue = server;
+    if (!server || server.length == 0) {
+        [self.tabView selectLastTabViewItem:nil];
+    }
 }
 
 - (IBAction)doConnect:(id)sender {

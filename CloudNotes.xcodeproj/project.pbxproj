@@ -42,6 +42,7 @@
 		D022581118A6CC950038232A /* OCPrefsWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D022580F18A6CC950038232A /* OCPrefsWindowController.xib */; };
 		D022581718A6F2CD0038232A /* PDKeychainBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = D022581418A6F2CD0038232A /* PDKeychainBindings.m */; };
 		D022581818A6F2CD0038232A /* PDKeychainBindingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D022581618A6F2CD0038232A /* PDKeychainBindingsController.m */; };
+		D022581B18A70E010038232A /* OCDateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = D022581A18A70E010038232A /* OCDateTransformer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,8 @@
 		D022581418A6F2CD0038232A /* PDKeychainBindings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeychainBindings.m; sourceTree = "<group>"; };
 		D022581518A6F2CD0038232A /* PDKeychainBindingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeychainBindingsController.h; sourceTree = "<group>"; };
 		D022581618A6F2CD0038232A /* PDKeychainBindingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeychainBindingsController.m; sourceTree = "<group>"; };
+		D022581918A70E010038232A /* OCDateTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDateTransformer.h; sourceTree = "<group>"; };
+		D022581A18A70E010038232A /* OCDateTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDateTransformer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +206,8 @@
 				D02257C418A1C3EF0038232A /* OCNotesViewController.h */,
 				D02257C518A1C3EF0038232A /* OCNotesViewController.m */,
 				D02257C618A1C3EF0038232A /* OCNotesViewController.xib */,
+				D022581918A70E010038232A /* OCDateTransformer.h */,
+				D022581A18A70E010038232A /* OCDateTransformer.m */,
 				D022580D18A6CC950038232A /* OCPrefsWindowController.h */,
 				D022580E18A6CC950038232A /* OCPrefsWindowController.m */,
 				D022580F18A6CC950038232A /* OCPrefsWindowController.xib */,
@@ -397,6 +402,7 @@
 				D02257EC18A1D3640038232A /* AFSecurityPolicy.m in Sources */,
 				D02257E818A1D3640038232A /* AFHTTPRequestOperation.m in Sources */,
 				D02257F018A1D3640038232A /* AFURLSessionManager.m in Sources */,
+				D022581B18A70E010038232A /* OCDateTransformer.m in Sources */,
 				D022579A189F20F90038232A /* main.m in Sources */,
 				D02257D318A1D2F90038232A /* OCNotesHelper.m in Sources */,
 				D022581718A6F2CD0038232A /* PDKeychainBindings.m in Sources */,

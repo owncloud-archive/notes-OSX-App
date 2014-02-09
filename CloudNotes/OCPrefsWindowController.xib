@@ -11,6 +11,7 @@
                 <outlet property="passwordTextField" destination="Q3h-IG-yCm" id="eQx-Qi-UdC"/>
                 <outlet property="serverTextField" destination="cZL-I7-XBN" id="hNY-9y-USC"/>
                 <outlet property="statusLabel" destination="6rC-Fu-iCI" id="a78-FR-M0a"/>
+                <outlet property="tabView" destination="HPa-86-bSo" id="ZgD-1Y-c33"/>
                 <outlet property="usernameTextField" destination="t3p-N6-Ooz" id="xbX-ko-LlH"/>
                 <outlet property="window" destination="1" id="3"/>
             </connections>

@@ -7,6 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "OCDateTransformer.h"
+#import "Note.h"
 
 @interface OCNotesViewController : NSViewController <NSTextFieldDelegate>
 
@@ -16,9 +18,12 @@
 @property (strong) IBOutlet NSSplitView *splitView;
 @property (strong, readonly) NSArray *idSortDescriptor;
 @property (strong) IBOutlet NSTextView *contentTextView;
+@property (strong) IBOutlet NSTableCellView *tableCellView;
 
 - (IBAction)doSync:(id)sender;
 - (IBAction)doAdd:(id)sender;
 - (IBAction)doDelete:(id)sender;
+
+
 
 @end

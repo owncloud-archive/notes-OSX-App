@@ -79,6 +79,17 @@
 	[right setFrame:rightFrame];
 }
 
+#pragma mark - Table View Delegate
+
+- (void)tableViewSelectionDidChange:(NSNotification *)aNotification {
+    [self.tableCellView bind:NSSelectedObjectBinding toObject:self.notesArrayController withKeyPath:@"selection" options:nil];
+    Note *note = [[self.notesArrayController selectedObjects] firstObject];
+    NSLog(@"Selected Row: %ld Title %@", (long)self.tableView.selectedRow, note.title);
+
+    [[OCNotesHelper sharedHelper] getNote:note];
+    self.contentTextView.string = note.content;
+}
+
 - (NSArray *)idSortDescriptor {
     return @[[NSSortDescriptor sortDescriptorWithKey:@"myId" ascending:NO]];
 }

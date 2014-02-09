@@ -15,6 +15,7 @@
 @property (strong) IBOutlet NSTextField *statusLabel;
 @property (strong) IBOutlet NSTextField *serverTextField;
 @property (strong) IBOutlet NSProgressIndicator *connectionActivityIndicator;
+@property (strong) IBOutlet NSTabView *tabView;
 
 - (IBAction)doConnect:(id)sender;
 
