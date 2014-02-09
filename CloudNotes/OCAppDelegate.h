@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import <CoreData/CoreData.h>
 #import "OCNotesViewController.h"
+#import "OCPrefsWindowController.h"
 
 @interface OCAppDelegate : NSObject <NSApplicationDelegate>
 
@@ -18,7 +19,9 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) OCNotesViewController *notesViewController;
+@property (strong, nonatomic, readonly) OCPrefsWindowController *prefsWindowController;
 
 - (IBAction)saveAction:(id)sender;
+- (IBAction)doPreferences:(id)sender;
 
 @end

@@ -31,7 +31,7 @@
  *************************************************************************/
 
 #import "OCAPIClient.h"
-//#import "KeychainItemWrapper.h"
+#import "PDKeychainBindings.h"
 #import "Note.h"
 #import "NSDictionary+HandleNull.h"
 
@@ -49,8 +49,7 @@ static dispatch_once_t oncePredicate = 0;
 +(OCAPIClient *)sharedClient {
     //static dispatch_once_t oncePredicate;
     dispatch_once(&oncePredicate, ^{
-        //NSString *serverURLString = [[NSUserDefaults standardUserDefaults] stringForKey:@"Server"];
-        NSString *serverURLString = @"https://secure3120.hostgator.com/~phedlund/owncloud";
+        NSString *serverURLString = [[NSUserDefaults standardUserDefaults] stringForKey:@"Server"];
         if (serverURLString.length > 0) {
             _sharedClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", serverURLString, rootPath]]];
         }
@@ -66,12 +65,8 @@ static dispatch_once_t oncePredicate = 0;
     BOOL allowInvalid = [[NSUserDefaults standardUserDefaults] boolForKey:@"AllowInvalidSSLCertificate"];
     self.securityPolicy.allowInvalidCertificates = allowInvalid;
 
-    //KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"iOCNotes" accessGroup:nil];
-    //[keychain setObject:(__bridge id)(kSecAttrAccessibleWhenUnlocked) forKey:(__bridge id)(kSecAttrAccessible)];
-    
     [self setRequestSerializer:[AFJSONRequestSerializer serializer]];
-    //[self.requestSerializer setAuthorizationHeaderFieldWithUsername:[keychain objectForKey:(__bridge id)(kSecAttrAccount)] password:[keychain objectForKey:(__bridge id)(kSecValueData)]];
-    [self.requestSerializer setAuthorizationHeaderFieldWithUsername:@"peter" password:@"sb269970"];
+    [self.requestSerializer setAuthorizationHeaderFieldWithUsername:[[PDKeychainBindings sharedKeychainBindings] objectForKey:@"Username"] password:[[PDKeychainBindings sharedKeychainBindings] objectForKey:@"Password"]];
     [self.reachabilityManager startMonitoring];
     
     return self;

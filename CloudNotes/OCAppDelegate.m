@@ -15,6 +15,7 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize managedObjectContext = _managedObjectContext;
+@synthesize prefsWindowController;
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication*)sender
 {
@@ -58,6 +59,10 @@
     if (![[self managedObjectContext] save:&error]) {
         [[NSApplication sharedApplication] presentError:error];
     }
+}
+
+- (IBAction)doPreferences:(id)sender {
+    [self.prefsWindowController showWindow:nil];
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
@@ -107,4 +112,10 @@
     return NSTerminateNow;
 }
 
+- (OCPrefsWindowController*)prefsWindowController {
+    if (!prefsWindowController) {
+        prefsWindowController = [[OCPrefsWindowController alloc] initWithWindowNibName:@"OCPrefsWindowController"];
+    }
+    return prefsWindowController;
+}
 @end

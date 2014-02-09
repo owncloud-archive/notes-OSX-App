@@ -1,3 +1,6 @@
 [submodule "AFNetworking"]
 	path = AFNetworking
 	url = https://github.com/AFNetworking/AFNetworking.git
+[submodule "PDKeychainBindingsController"]
+	path = PDKeychainBindingsController
+	url = https://github.com/carlbrown/PDKeychainBindingsController.git

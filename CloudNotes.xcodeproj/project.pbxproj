@@ -38,6 +38,10 @@
 		D02257FC18A1DB840038232A /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D02257FB18A1DB840038232A /* CoreServices.framework */; };
 		D02257FF18A457E60038232A /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D02257FD18A457E50038232A /* Notes.xcdatamodeld */; };
 		D022580218A5B4260038232A /* NSSplitView+SaveLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D022580118A5B4260038232A /* NSSplitView+SaveLayout.m */; };
+		D022581018A6CC950038232A /* OCPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D022580E18A6CC950038232A /* OCPrefsWindowController.m */; };
+		D022581118A6CC950038232A /* OCPrefsWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D022580F18A6CC950038232A /* OCPrefsWindowController.xib */; };
+		D022581718A6F2CD0038232A /* PDKeychainBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = D022581418A6F2CD0038232A /* PDKeychainBindings.m */; };
+		D022581818A6F2CD0038232A /* PDKeychainBindingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D022581618A6F2CD0038232A /* PDKeychainBindingsController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +110,13 @@
 		D02257FE18A457E60038232A /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
 		D022580018A5B4260038232A /* NSSplitView+SaveLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSplitView+SaveLayout.h"; sourceTree = "<group>"; };
 		D022580118A5B4260038232A /* NSSplitView+SaveLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSplitView+SaveLayout.m"; sourceTree = "<group>"; };
+		D022580D18A6CC950038232A /* OCPrefsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCPrefsWindowController.h; sourceTree = "<group>"; };
+		D022580E18A6CC950038232A /* OCPrefsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCPrefsWindowController.m; sourceTree = "<group>"; };
+		D022580F18A6CC950038232A /* OCPrefsWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OCPrefsWindowController.xib; sourceTree = "<group>"; };
+		D022581318A6F2CD0038232A /* PDKeychainBindings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeychainBindings.h; sourceTree = "<group>"; };
+		D022581418A6F2CD0038232A /* PDKeychainBindings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeychainBindings.m; sourceTree = "<group>"; };
+		D022581518A6F2CD0038232A /* PDKeychainBindingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeychainBindingsController.h; sourceTree = "<group>"; };
+		D022581618A6F2CD0038232A /* PDKeychainBindingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeychainBindingsController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +146,7 @@
 		D0225781189F20F90038232A = {
 			isa = PBXGroup;
 			children = (
+				D022581218A6F2CD0038232A /* PDKeychainBindingsController */,
 				D02257D418A1D3640038232A /* AFNetworking */,
 				D0225793189F20F90038232A /* CloudNotes */,
 				D02257B4189F20F90038232A /* CloudNotesTests */,
@@ -191,6 +203,9 @@
 				D02257C418A1C3EF0038232A /* OCNotesViewController.h */,
 				D02257C518A1C3EF0038232A /* OCNotesViewController.m */,
 				D02257C618A1C3EF0038232A /* OCNotesViewController.xib */,
+				D022580D18A6CC950038232A /* OCPrefsWindowController.h */,
+				D022580E18A6CC950038232A /* OCPrefsWindowController.m */,
+				D022580F18A6CC950038232A /* OCPrefsWindowController.xib */,
 				D02257F418A1D9AA0038232A /* NSDictionary+HandleNull.h */,
 				D02257F518A1D9AA0038232A /* NSDictionary+HandleNull.m */,
 				D022580018A5B4260038232A /* NSSplitView+SaveLayout.h */,
@@ -256,6 +271,18 @@
 			);
 			name = AFNetworking;
 			path = AFNetworking/AFNetworking;
+			sourceTree = "<group>";
+		};
+		D022581218A6F2CD0038232A /* PDKeychainBindingsController */ = {
+			isa = PBXGroup;
+			children = (
+				D022581318A6F2CD0038232A /* PDKeychainBindings.h */,
+				D022581418A6F2CD0038232A /* PDKeychainBindings.m */,
+				D022581518A6F2CD0038232A /* PDKeychainBindingsController.h */,
+				D022581618A6F2CD0038232A /* PDKeychainBindingsController.m */,
+			);
+			name = PDKeychainBindingsController;
+			path = PDKeychainBindingsController/PDKeychainBindingsController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +362,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D022581118A6CC950038232A /* OCPrefsWindowController.xib in Resources */,
 				D0225798189F20F90038232A /* InfoPlist.strings in Resources */,
 				D02257A9189F20F90038232A /* Images.xcassets in Resources */,
 				D022579E189F20F90038232A /* Credits.rtf in Resources */,
@@ -371,10 +399,13 @@
 				D02257F018A1D3640038232A /* AFURLSessionManager.m in Sources */,
 				D022579A189F20F90038232A /* main.m in Sources */,
 				D02257D318A1D2F90038232A /* OCNotesHelper.m in Sources */,
+				D022581718A6F2CD0038232A /* PDKeychainBindings.m in Sources */,
 				D02257F618A1D9AA0038232A /* NSDictionary+HandleNull.m in Sources */,
 				D02257EA18A1D3640038232A /* AFHTTPSessionManager.m in Sources */,
 				D02257D218A1D2F90038232A /* OCAPIClient.m in Sources */,
 				D02257EB18A1D3640038232A /* AFNetworkReachabilityManager.m in Sources */,
+				D022581018A6CC950038232A /* OCPrefsWindowController.m in Sources */,
+				D022581818A6F2CD0038232A /* PDKeychainBindingsController.m in Sources */,
 				D02257E918A1D3640038232A /* AFHTTPRequestOperationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
