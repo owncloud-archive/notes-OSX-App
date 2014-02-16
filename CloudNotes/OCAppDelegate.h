@@ -23,5 +23,8 @@
 
 - (IBAction)saveAction:(id)sender;
 - (IBAction)doPreferences:(id)sender;
+- (IBAction)doNew:(id)sender;
+- (IBAction)doDelete:(id)sender;
+- (IBAction)doSync:(id)sender;
 
 @end

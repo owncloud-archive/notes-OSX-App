@@ -73,6 +73,18 @@
     [self.prefsWindowController showWindow:nil];
 }
 
+- (IBAction)doNew:(id)sender {
+    [self.notesViewController doAdd:sender];
+}
+
+- (IBAction)doDelete:(id)sender {
+    [self.notesViewController doDelete:sender];
+}
+
+- (IBAction)doSync:(id)sender {
+    [self.notesViewController doSync:sender];
+}
+
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
 {
     // Save changes in the application's managed object context before the application terminates.
