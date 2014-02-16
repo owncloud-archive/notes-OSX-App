@@ -9,6 +9,7 @@
 #import "OCNotesViewController.h"
 #import "OCNotesHelper.h"
 #import "Note.h"
+#import "OCEditorSettings.h"
 
 @interface OCNotesViewController () {
     NSTimer *editingTimer;
@@ -25,6 +26,18 @@
         // Initialization code here.
     }
     return self;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    self.contentTextView.textContainerInset = NSMakeSize(25, 25);
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(noteUpdated:)
+                                                 name:NSManagedObjectContextDidSaveNotification
+                                               object:nil];
+    
+    [self updateFont];
 }
 
 - (IBAction)doSync:(id)sender {
@@ -88,6 +101,7 @@
 
     [[OCNotesHelper sharedHelper] getNote:note];
     self.contentTextView.string = note.content;
+    [self updateFont];
 }
 
 - (NSArray *)idSortDescriptor {
@@ -114,6 +128,19 @@
         NSLog(@"Note Content %@", noteToUpdate.content);
         [[OCNotesHelper sharedHelper] updateNote:noteToUpdate];
     }
+}
+
+- (void)noteUpdated:(NSNotification *)notification {
+    [self updateFont];
+}
+
+
+- (void)updateFont {
+    NSURL *saveUrl = [[OCNotesHelper sharedHelper] applicationFilesDirectory];
+    saveUrl = [saveUrl URLByAppendingPathComponent:@"settings" isDirectory:NO];
+    saveUrl = [saveUrl URLByAppendingPathExtension:@"plist"];
+    OCEditorSettings *settings = [NSKeyedUnarchiver unarchiveObjectWithFile:[saveUrl path]];
+    self.contentTextView.textStorage.font = settings.font;
 }
 
 @end

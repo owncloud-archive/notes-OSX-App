@@ -43,6 +43,7 @@
 		D022581718A6F2CD0038232A /* PDKeychainBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = D022581418A6F2CD0038232A /* PDKeychainBindings.m */; };
 		D022581818A6F2CD0038232A /* PDKeychainBindingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D022581618A6F2CD0038232A /* PDKeychainBindingsController.m */; };
 		D022581B18A70E010038232A /* OCDateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = D022581A18A70E010038232A /* OCDateTransformer.m */; };
+		D0EB38E818B0577A00379F3F /* OCEditorSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EB38E718B0577A00379F3F /* OCEditorSettings.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,8 @@
 		D022581618A6F2CD0038232A /* PDKeychainBindingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeychainBindingsController.m; sourceTree = "<group>"; };
 		D022581918A70E010038232A /* OCDateTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDateTransformer.h; sourceTree = "<group>"; };
 		D022581A18A70E010038232A /* OCDateTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDateTransformer.m; sourceTree = "<group>"; };
+		D0EB38E618B0577A00379F3F /* OCEditorSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCEditorSettings.h; sourceTree = "<group>"; };
+		D0EB38E718B0577A00379F3F /* OCEditorSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCEditorSettings.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +218,8 @@
 				D02257F518A1D9AA0038232A /* NSDictionary+HandleNull.m */,
 				D022580018A5B4260038232A /* NSSplitView+SaveLayout.h */,
 				D022580118A5B4260038232A /* NSSplitView+SaveLayout.m */,
+				D0EB38E618B0577A00379F3F /* OCEditorSettings.h */,
+				D0EB38E718B0577A00379F3F /* OCEditorSettings.m */,
 				D02257A8189F20F90038232A /* Images.xcassets */,
 				D0225794189F20F90038232A /* Supporting Files */,
 			);
@@ -404,6 +409,7 @@
 				D02257F018A1D3640038232A /* AFURLSessionManager.m in Sources */,
 				D022581B18A70E010038232A /* OCDateTransformer.m in Sources */,
 				D022579A189F20F90038232A /* main.m in Sources */,
+				D0EB38E818B0577A00379F3F /* OCEditorSettings.m in Sources */,
 				D02257D318A1D2F90038232A /* OCNotesHelper.m in Sources */,
 				D022581718A6F2CD0038232A /* PDKeychainBindings.m in Sources */,
 				D02257F618A1D9AA0038232A /* NSDictionary+HandleNull.m in Sources */,

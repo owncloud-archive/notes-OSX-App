@@ -9,6 +9,7 @@
 #import "OCAppDelegate.h"
 #import "OCNotesHelper.h"
 #import "NSSplitView+SaveLayout.h"
+#import "OCEditorSettings.h"
 
 @implementation OCAppDelegate
 
@@ -36,7 +37,7 @@
     [self.notesViewController.tableView reloadData];
     [self.notesViewController.splitView loadLayoutWithName:self.notesViewController.splitView.autosaveName];
     [self.notesViewController.tableView setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleSourceList];
-
+    
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"SyncOnStart"]) {
         [self.notesViewController doSync:nil];
     }
@@ -45,6 +46,8 @@
     }
     [[self window] setAutorecalculatesContentBorderThickness:YES forEdge:NSMinYEdge];
 	[[self window] setContentBorderThickness:30 forEdge:NSMinYEdge];
+    
+    [NSFontManager sharedFontManager].action = @selector(changeEditorFont:);
 }
 
 // Returns the NSUndoManager for the application. In this case, the manager returned is that of the managed object context for the application.
@@ -124,4 +127,20 @@
     }
     return prefsWindowController;
 }
+
+- (void)changeEditorFont:(id)sender {
+    NSFont *newFont = [sender convertFont:[sender selectedFont]];
+    OCEditorSettings *settings = [[OCEditorSettings alloc] init];
+    settings.font = newFont;
+    
+    NSLog(@"Saving myself");
+    NSURL *saveUrl = [[OCNotesHelper sharedHelper] applicationFilesDirectory];
+    
+    saveUrl = [saveUrl URLByAppendingPathComponent:@"settings" isDirectory:NO];
+    saveUrl = [saveUrl URLByAppendingPathExtension:@"plist"];
+    [NSKeyedArchiver archiveRootObject:settings toFile:[saveUrl path]];
+    
+    self.notesViewController.contentTextView.textStorage.font = settings.font;    
+}
+
 @end
