@@ -135,6 +135,7 @@
 
 - (void)noteUpdated:(NSNotification *)notification {
     [self updateFont];
+    [self.contentTextView.window makeFirstResponder:self.contentTextView];
 }
 
 
@@ -144,6 +145,7 @@
     saveUrl = [saveUrl URLByAppendingPathExtension:@"plist"];
     OCEditorSettings *settings = [NSKeyedUnarchiver unarchiveObjectWithFile:[saveUrl path]];
     self.contentTextView.textStorage.font = settings.font;
+    self.contentTextView.font = settings.font;
 }
 
 @end

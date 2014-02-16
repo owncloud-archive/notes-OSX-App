@@ -151,7 +151,8 @@
     saveUrl = [saveUrl URLByAppendingPathExtension:@"plist"];
     [NSKeyedArchiver archiveRootObject:settings toFile:[saveUrl path]];
     
-    self.notesViewController.contentTextView.textStorage.font = settings.font;    
+    self.notesViewController.contentTextView.textStorage.font = settings.font;
+    self.notesViewController.contentTextView.font = settings.font;
 }
 
 @end

@@ -154,7 +154,7 @@
                                                 <size key="minSize" width="309" height="323"/>
                                                 <size key="maxSize" width="463" height="10000000"/>
                                                 <connections>
-                                                    <binding destination="V9P-Ft-aw9" name="attributedString" keyPath="selection.content" id="md5-kV-doi"/>
+                                                    <binding destination="V9P-Ft-aw9" name="value" keyPath="selection.content" id="30a-QP-1Kn"/>
                                                     <outlet property="delegate" destination="-2" id="naF-96-Wds"/>
                                                 </connections>
                                             </textView>
