@@ -66,7 +66,7 @@
                         <action selector="doSync:" target="-2" id="zaI-e0-pOt"/>
                     </connections>
                 </button>
-                <splitView autosaveName="CNMainSplitViewPos" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r6l-vz-fBK">
+                <splitView autosaveName="" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r6l-vz-fBK">
                     <rect key="frame" x="0.0" y="30" width="624" height="323"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>

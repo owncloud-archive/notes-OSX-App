@@ -10,6 +10,7 @@
 #import "OCNotesHelper.h"
 #import "Note.h"
 #import "OCEditorSettings.h"
+#import "NSSplitView+SaveLayout.h"
 
 @interface OCNotesViewController () {
     NSTimer *editingTimer;
@@ -30,6 +31,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    [self.splitView loadLayoutWithName:@"SplitViewLayout"];
+
     self.contentTextView.textContainerInset = NSMakeSize(25, 25);
     
     [[NSNotificationCenter defaultCenter] addObserver:self

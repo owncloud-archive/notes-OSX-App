@@ -35,7 +35,6 @@
     self.notesViewController.context = [[OCNotesHelper sharedHelper] context];
     [self.notesViewController.notesArrayController fetch:self.notesViewController];
     [self.notesViewController.tableView reloadData];
-    [self.notesViewController.splitView loadLayoutWithName:self.notesViewController.splitView.autosaveName];
     [self.notesViewController.tableView setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleSourceList];
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"SyncOnStart"]) {
@@ -77,7 +76,7 @@
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
 {
     // Save changes in the application's managed object context before the application terminates.
-    [self.notesViewController.splitView saveLayoutWithName:self.notesViewController.splitView.autosaveName];
+    [self.notesViewController.splitView saveLayoutWithName:@"SplitViewLayout"];
     
     if (!_managedObjectContext) {
         return NSTerminateNow;

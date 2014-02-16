@@ -12,8 +12,9 @@
 
 - (void)saveLayoutWithName:(NSString *)defaultName {
     NSMutableArray *rectStrings = [NSMutableArray array];
-    for (NSView *view in self.subviews)
+    [self.subviews enumerateObjectsUsingBlock:^(NSView *view, NSUInteger idx, BOOL *stop) {
         [rectStrings addObject: NSStringFromRect(view.frame)];
+    }];
     [[NSUserDefaults standardUserDefaults] setObject:rectStrings forKey:defaultName];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
@@ -21,11 +22,9 @@
 - (void)loadLayoutWithName:(NSString *)defaultName {
     NSMutableArray *rectStrings = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:defaultName]];
     if (rectStrings) {
-        for (NSView *view in self.subviews) {
-            view.frame = NSRectFromString([rectStrings objectAtIndex:0]);
-            [rectStrings removeObjectAtIndex:0];
-        }
-        [self adjustSubviews];
+        [self.subviews enumerateObjectsUsingBlock:^(NSView *view, NSUInteger idx, BOOL *stop) {
+            view.frame = NSRectFromString([rectStrings objectAtIndex:idx]);
+        }];
     }
 }
 
