@@ -48,7 +48,7 @@
 }
 
 - (IBAction)doAdd:(id)sender {
-    [[OCNotesHelper sharedHelper] addNote];
+    [[OCNotesHelper sharedHelper] addNote:@""];
 }
 
 - (IBAction)doDelete:(id)sender {

@@ -76,6 +76,12 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="S5H-xO-g7E"/>
+                            <menuItem title="Import…" keyEquivalent="o" id="72">
+                                <connections>
+                                    <action selector="doImport:" target="494" id="oNF-K3-sVr"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="qJU-T6-CNQ"/>
                             <menuItem title="Delete Note" id="3J4-0c-iql">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
@@ -86,11 +92,6 @@
                             <menuItem title="Sync" keyEquivalent="r" id="MOl-ku-oVC">
                                 <connections>
                                     <action selector="doSync:" target="494" id="k5r-2L-U2y"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Open…" hidden="YES" keyEquivalent="o" id="72">
-                                <connections>
-                                    <action selector="openDocument:" target="-1" id="374"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Open Recent" hidden="YES" id="124">
@@ -664,21 +665,7 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="CloudNotes" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
-            <view key="contentView" id="372">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
-                <autoresizingMask key="autoresizingMask"/>
-            </view>
-        </window>
-        <customObject id="494" customClass="OCAppDelegate">
-            <connections>
-                <outlet property="window" destination="371" id="532"/>
-            </connections>
-        </customObject>
+        <customObject id="494" customClass="OCAppDelegate"/>
         <customObject id="420" customClass="NSFontManager"/>
     </objects>
 </document>

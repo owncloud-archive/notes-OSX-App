@@ -44,6 +44,8 @@
 		D022581818A6F2CD0038232A /* PDKeychainBindingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D022581618A6F2CD0038232A /* PDKeychainBindingsController.m */; };
 		D022581B18A70E010038232A /* OCDateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = D022581A18A70E010038232A /* OCDateTransformer.m */; };
 		D0EB38E818B0577A00379F3F /* OCEditorSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EB38E718B0577A00379F3F /* OCEditorSettings.m */; };
+		D0EB38EF18B175D900379F3F /* OCNotesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EB38ED18B175D900379F3F /* OCNotesWindowController.m */; };
+		D0EB38F018B175D900379F3F /* OCNotesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0EB38EE18B175D900379F3F /* OCNotesWindowController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +125,9 @@
 		D022581A18A70E010038232A /* OCDateTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDateTransformer.m; sourceTree = "<group>"; };
 		D0EB38E618B0577A00379F3F /* OCEditorSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCEditorSettings.h; sourceTree = "<group>"; };
 		D0EB38E718B0577A00379F3F /* OCEditorSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCEditorSettings.m; sourceTree = "<group>"; };
+		D0EB38EC18B175D900379F3F /* OCNotesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCNotesWindowController.h; sourceTree = "<group>"; };
+		D0EB38ED18B175D900379F3F /* OCNotesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCNotesWindowController.m; sourceTree = "<group>"; };
+		D0EB38EE18B175D900379F3F /* OCNotesWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OCNotesWindowController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +211,9 @@
 				D022579F189F20F90038232A /* OCAppDelegate.h */,
 				D02257A0189F20F90038232A /* OCAppDelegate.m */,
 				D02257A2189F20F90038232A /* MainMenu.xib */,
+				D0EB38EC18B175D900379F3F /* OCNotesWindowController.h */,
+				D0EB38ED18B175D900379F3F /* OCNotesWindowController.m */,
+				D0EB38EE18B175D900379F3F /* OCNotesWindowController.xib */,
 				D02257C418A1C3EF0038232A /* OCNotesViewController.h */,
 				D02257C518A1C3EF0038232A /* OCNotesViewController.m */,
 				D02257C618A1C3EF0038232A /* OCNotesViewController.xib */,
@@ -376,6 +384,7 @@
 				D0225798189F20F90038232A /* InfoPlist.strings in Resources */,
 				D02257A9189F20F90038232A /* Images.xcassets in Resources */,
 				D022579E189F20F90038232A /* Credits.rtf in Resources */,
+				D0EB38F018B175D900379F3F /* OCNotesWindowController.xib in Resources */,
 				D02257A4189F20F90038232A /* MainMenu.xib in Resources */,
 				D02257C818A1C3EF0038232A /* OCNotesViewController.xib in Resources */,
 			);
@@ -407,6 +416,7 @@
 				D02257EC18A1D3640038232A /* AFSecurityPolicy.m in Sources */,
 				D02257E818A1D3640038232A /* AFHTTPRequestOperation.m in Sources */,
 				D02257F018A1D3640038232A /* AFURLSessionManager.m in Sources */,
+				D0EB38EF18B175D900379F3F /* OCNotesWindowController.m in Sources */,
 				D022581B18A70E010038232A /* OCDateTransformer.m in Sources */,
 				D022579A189F20F90038232A /* main.m in Sources */,
 				D0EB38E818B0577A00379F3F /* OCEditorSettings.m in Sources */,

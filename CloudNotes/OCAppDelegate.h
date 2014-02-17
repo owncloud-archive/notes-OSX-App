@@ -26,5 +26,6 @@
 - (IBAction)doNew:(id)sender;
 - (IBAction)doDelete:(id)sender;
 - (IBAction)doSync:(id)sender;
+- (IBAction)doImport:(id)sender;
 
 @end

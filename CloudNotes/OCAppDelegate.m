@@ -7,9 +7,16 @@
 //
 
 #import "OCAppDelegate.h"
+#import "OCNotesWindowController.h"
 #import "OCNotesHelper.h"
 #import "NSSplitView+SaveLayout.h"
 #import "OCEditorSettings.h"
+
+@interface OCAppDelegate ()
+
+@property (strong) OCNotesWindowController *notesWindowController;
+
+@end
 
 @implementation OCAppDelegate
 
@@ -26,12 +33,14 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+    
+    self.notesWindowController = [[OCNotesWindowController alloc] initWithWindowNibName:@"OCNotesWindowController"];
     self.notesViewController = [[OCNotesViewController alloc] initWithNibName:@"OCNotesViewController" bundle:nil];
     NSView *mySubview = self.notesViewController.view;
-    [self.window.contentView addSubview:mySubview];
+    [self.notesWindowController.window.contentView addSubview:mySubview];
     [mySubview setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [[[self window] contentView] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[mySubview]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(mySubview)]];
-    [[[self window] contentView] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[mySubview]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(mySubview)]];
+    [[self.notesWindowController.window contentView] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[mySubview]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(mySubview)]];
+    [[self.notesWindowController.window contentView] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[mySubview]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(mySubview)]];
     self.notesViewController.context = [[OCNotesHelper sharedHelper] context];
     [self.notesViewController.notesArrayController fetch:self.notesViewController];
     [self.notesViewController.tableView reloadData];
@@ -43,10 +52,12 @@
     if ([[NSUserDefaults standardUserDefaults] stringForKey:@"Server"].length == 0) {
         [self doPreferences:nil];
     }
-    [[self window] setAutorecalculatesContentBorderThickness:YES forEdge:NSMinYEdge];
-	[[self window] setContentBorderThickness:30 forEdge:NSMinYEdge];
+    [self.notesWindowController.window setAutorecalculatesContentBorderThickness:YES forEdge:NSMinYEdge];
+	[self.notesWindowController.window setContentBorderThickness:30 forEdge:NSMinYEdge];
     
     [NSFontManager sharedFontManager].action = @selector(changeEditorFont:);
+    [self.notesWindowController showWindow:self];
+
 }
 
 // Returns the NSUndoManager for the application. In this case, the manager returned is that of the managed object context for the application.
@@ -83,6 +94,33 @@
 
 - (IBAction)doSync:(id)sender {
     [self.notesViewController doSync:sender];
+}
+
+- (IBAction)doImport:(id)sender {
+    NSOpenPanel* openPanel = [NSOpenPanel openPanel];
+    
+    openPanel.title = @"Select text file(s) to import";
+    openPanel.showsResizeIndicator = YES;
+    openPanel.showsHiddenFiles = NO;
+    openPanel.canChooseDirectories = NO;
+    openPanel.canCreateDirectories = YES;
+    openPanel.allowsMultipleSelection = YES;
+    openPanel.allowedFileTypes = @[@"txt"];
+    
+    [openPanel beginSheetModalForWindow:self.window
+                      completionHandler:^(NSInteger result) {
+                          
+                          if (result == NSFileHandlingPanelOKButton) {
+                              
+                              [openPanel.URLs enumerateObjectsUsingBlock:^(NSURL *url, NSUInteger idx, BOOL *stop) {
+                                  NSString *fileText = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
+                                  if (fileText) {
+                                      NSLog(@"Content: %@", fileText);
+                                      [[OCNotesHelper sharedHelper] addNote:fileText];
+                                  }
+                              }];
+                          }
+                      }];
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
