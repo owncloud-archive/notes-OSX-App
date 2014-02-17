@@ -59,6 +59,28 @@
     }
 }
 
+- (IBAction)doExport:(id)sender {
+    if ([[self.notesArrayController selectedObjects] count] > 0) {
+        __block Note *noteToExport = (Note*)[[self.notesArrayController selectedObjects] objectAtIndex:0];
+        
+        NSSavePanel* savePanel = [NSSavePanel savePanel];
+        savePanel.title = @"Export note as...";
+        savePanel.showsResizeIndicator = YES;
+        savePanel.showsHiddenFiles = NO;
+        savePanel.canCreateDirectories = YES;
+        savePanel.allowedFileTypes = @[@"txt"];
+        savePanel.nameFieldStringValue = noteToExport.title;
+        
+        [savePanel beginSheetModalForWindow:self.view.window
+                          completionHandler:^(NSInteger result) {
+                              if (result == NSFileHandlingPanelOKButton) {
+                                  NSString *contentToExport = noteToExport.content;
+                                  [contentToExport writeToURL:savePanel.URL atomically:YES encoding:NSUTF8StringEncoding error:nil];
+                              }
+                          }];
+    }
+}
+
 - (BOOL)splitView:(NSSplitView *)splitView canCollapseSubview:(NSView *)subview {
     return NO;
 }

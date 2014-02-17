@@ -23,5 +23,6 @@
 - (IBAction)doSync:(id)sender;
 - (IBAction)doAdd:(id)sender;
 - (IBAction)doDelete:(id)sender;
+- (IBAction)doExport:(id)sender;
 
 @end

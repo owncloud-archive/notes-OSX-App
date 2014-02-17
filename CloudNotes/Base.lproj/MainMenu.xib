@@ -81,6 +81,11 @@
                                     <action selector="doImport:" target="494" id="oNF-K3-sVr"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Export…" keyEquivalent="s" id="75">
+                                <connections>
+                                    <action selector="doExport:" target="494" id="fju-ls-iKo"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="qJU-T6-CNQ"/>
                             <menuItem title="Delete Note" id="3J4-0c-iql">
                                 <modifierMask key="keyEquivalentModifierMask"/>
@@ -108,14 +113,9 @@
                             <menuItem isSeparatorItem="YES" id="79">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Close" keyEquivalent="w" id="73">
+                            <menuItem title="Close Window" keyEquivalent="w" id="73">
                                 <connections>
                                     <action selector="performClose:" target="-1" id="193"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Save…" hidden="YES" keyEquivalent="s" id="75">
-                                <connections>
-                                    <action selector="saveDocument:" target="-1" id="362"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Revert to Saved" hidden="YES" id="112">

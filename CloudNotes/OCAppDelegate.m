@@ -123,6 +123,10 @@
                       }];
 }
 
+- (IBAction)doExport:(id)sender {
+    [self.notesViewController doExport:sender];
+}
+
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
 {
     // Save changes in the application's managed object context before the application terminates.
