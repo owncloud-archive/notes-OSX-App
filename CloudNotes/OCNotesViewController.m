@@ -165,9 +165,11 @@
     NSURL *saveUrl = [[OCNotesHelper sharedHelper] applicationFilesDirectory];
     saveUrl = [saveUrl URLByAppendingPathComponent:@"settings" isDirectory:NO];
     saveUrl = [saveUrl URLByAppendingPathExtension:@"plist"];
-    OCEditorSettings *settings = [NSKeyedUnarchiver unarchiveObjectWithFile:[saveUrl path]];
-    self.contentTextView.textStorage.font = settings.font;
-    self.contentTextView.font = settings.font;
+    if ([[NSFileManager defaultManager] fileExistsAtPath:[saveUrl path]]) {
+        OCEditorSettings *settings = [NSKeyedUnarchiver unarchiveObjectWithFile:[saveUrl path]];
+        self.contentTextView.textStorage.font = settings.font;
+        self.contentTextView.font = settings.font;
+    }
 }
 
 @end

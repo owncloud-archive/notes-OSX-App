@@ -12,7 +12,7 @@
                 <outlet property="notesArrayController" destination="V9P-Ft-aw9" id="lLb-qd-4li"/>
                 <outlet property="splitView" destination="r6l-vz-fBK" id="Q4L-jB-YK3"/>
                 <outlet property="tableView" destination="Iwf-9S-Onq" id="U6B-m0-jrk"/>
-                <outlet property="view" destination="1" id="2"/>
+                <outlet property="view" destination="1" id="si4-Bt-scU"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
