@@ -14,6 +14,8 @@
 
 @interface OCNotesViewController () {
     NSTimer *editingTimer;
+    NSRange selection;
+    NSResponder *currentResponder;
 }
 
 @end
@@ -126,6 +128,7 @@
 
     [[OCNotesHelper sharedHelper] getNote:note];
     self.contentTextView.string = note.content;
+    selection = NSMakeRange(0, 0);
     [self updateFont];
 }
 
@@ -147,19 +150,20 @@
     NSLog(@"Ready to update text");
     Note *noteToUpdate = nil;
     if ([[self.notesArrayController selectedObjects] count] > 0) {
+        selection = self.contentTextView.selectedRange;
+        currentResponder = self.contentTextView.window.firstResponder;
         noteToUpdate = (Note*)[[self.notesArrayController selectedObjects] objectAtIndex:0];
-        NSLog(@"Content: %@", self.contentTextView.string);
-        [noteToUpdate setContent:[NSString stringWithString:self.contentTextView.string]];
-        NSLog(@"Note Content %@", noteToUpdate.content);
         [[OCNotesHelper sharedHelper] updateNote:noteToUpdate];
     }
 }
 
 - (void)noteUpdated:(NSNotification *)notification {
     [self updateFont];
-    [self.contentTextView.window makeFirstResponder:self.contentTextView];
+    self.contentTextView.selectedRange = selection;
+    if (currentResponder) {
+        [self.contentTextView.window makeFirstResponder:currentResponder];
+    }
 }
-
 
 - (void)updateFont {
     NSURL *saveUrl = [[OCNotesHelper sharedHelper] applicationFilesDirectory];
