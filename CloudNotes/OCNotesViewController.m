@@ -15,6 +15,7 @@
 @interface OCNotesViewController () {
     NSTimer *editingTimer;
     NSRange selection;
+    CGPoint clipOrigin;
     NSResponder *currentResponder;
 }
 
@@ -151,6 +152,7 @@
     Note *noteToUpdate = nil;
     if ([[self.notesArrayController selectedObjects] count] > 0) {
         selection = self.contentTextView.selectedRange;
+        clipOrigin = self.contentTextView.enclosingScrollView.contentView.bounds.origin;
         currentResponder = self.contentTextView.window.firstResponder;
         noteToUpdate = (Note*)[[self.notesArrayController selectedObjects] objectAtIndex:0];
         [[OCNotesHelper sharedHelper] updateNote:noteToUpdate];
@@ -160,6 +162,8 @@
 - (void)noteUpdated:(NSNotification *)notification {
     [self updateFont];
     self.contentTextView.selectedRange = selection;
+    [self.contentTextView.enclosingScrollView.contentView scrollToPoint: clipOrigin];
+    [self.contentTextView.enclosingScrollView reflectScrolledClipView:self.contentTextView.enclosingScrollView.contentView];
     if (currentResponder) {
         [self.contentTextView.window makeFirstResponder:currentResponder];
     }
