@@ -85,17 +85,7 @@
     return objectModel;
 }
 
-// Returns the directory the application uses to store the Core Data store file. This code uses a directory named "com.peterandlinda.CloudNotes" in the user's Application Support directory.
-- (NSURL *)applicationFilesDirectory
-{
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSURL *appSupportURL = [[fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask] lastObject];
-    return [appSupportURL URLByAppendingPathComponent:@"com.peterandlinda.CloudNotes"];
-}
-
-// Returns the persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. (The directory for the store is created, if necessary.)
-- (NSPersistentStoreCoordinator *)coordinator
-{
+- (NSPersistentStoreCoordinator *)coordinator {
     if (!coordinator) {
     
         NSManagedObjectModel *mom = self.objectModel;
@@ -144,25 +134,24 @@
     return coordinator;
 }
 
-// Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.)
-- (NSManagedObjectContext *)context
-{
+- (NSManagedObjectContext *)context {
     if (!context) {
-        NSPersistentStoreCoordinator *myCoordinator = self.coordinator;
-        if (!myCoordinator) {
-            NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-            [dict setValue:@"Failed to initialize the store" forKey:NSLocalizedDescriptionKey];
-            [dict setValue:@"There was an error building up the data file." forKey:NSLocalizedFailureReasonErrorKey];
-            NSError *error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
-            [[NSApplication sharedApplication] presentError:error];
-            return nil;
+        NSPersistentStoreCoordinator *myCoordinator = [self coordinator];
+        if (myCoordinator != nil) {
+            context = [[NSManagedObjectContext alloc] init];
+            [context setPersistentStoreCoordinator:myCoordinator];
         }
-        context = [[NSManagedObjectContext alloc] init];
-        [context setPersistentStoreCoordinator:coordinator];
     }
     return context;
 }
 
+// Returns the directory the application uses to store the Core Data store file. This code uses a directory named "com.peterandlinda.CloudNotes" in the user's Application Support directory.
+- (NSURL *)applicationFilesDirectory
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSURL *appSupportURL = [[fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask] lastObject];
+    return [appSupportURL URLByAppendingPathComponent:@"com.peterandlinda.CloudNotes"];
+}
 - (void)saveContext {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setObject:notesToAdd forKey:@"NotesToAdd"];
@@ -295,34 +284,35 @@
         //online
         NSString *path = [NSString stringWithFormat:@"notes/%@", [note.myId stringValue]];
         __block Note *noteToGet = (Note*)[self.context objectWithID:note.objectID];
-        [[OCAPIClient sharedClient] GET:path parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-            //NSLog(@"Note: %@", responseObject);
-            NSDictionary *noteDict = (NSDictionary*)responseObject;
-            NSLog(@"NoteDict: %@", noteDict);
-            if ([noteToGet.myId isEqualToNumber:[noteDict objectForKey:@"id"]]) {
-                if ([noteDict objectForKey:@"modified"] > noteToGet.modified) {
-                    noteToGet.title = [noteDict objectForKey:@"title"];
-                    noteToGet.content = [noteDict objectForKeyNotNull:@"content" fallback:@""];
-                    noteToGet.modified = [noteDict objectForKey:@"modified"];
+        if (noteToGet) {
+            [[OCAPIClient sharedClient] GET:path parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+                //NSLog(@"Note: %@", responseObject);
+                NSDictionary *noteDict = (NSDictionary*)responseObject;
+                NSLog(@"NoteDict: %@", noteDict);
+                if ([noteToGet.myId isEqualToNumber:[noteDict objectForKey:@"id"]]) {
+                    if ([noteDict objectForKey:@"modified"] > noteToGet.modified) {
+                        noteToGet.title = [noteDict objectForKey:@"title"];
+                        noteToGet.content = [noteDict objectForKeyNotNull:@"content" fallback:@""];
+                        noteToGet.modified = [noteDict objectForKey:@"modified"];
+                    }
+                    [self saveContext];
                 }
-                [self saveContext];
-            }
-        } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
-            NSString *message;
-            switch (response.statusCode) {
-                case 404:
-                    message = @"The note does not exist";
-                    break;
-                default:
-                    message = [NSString stringWithFormat:@"The server responded '%@' and the error reported was '%@'", [NSHTTPURLResponse localizedStringForStatusCode:response.statusCode], [error localizedDescription]];
-                    break;
-            }
-            
-            NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"Error Getting Note", @"Title", message, @"Message", nil];
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"NetworkError" object:self userInfo:userInfo];
-        }];
-        
+            } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
+                NSString *message;
+                switch (response.statusCode) {
+                    case 404:
+                        message = @"The note does not exist";
+                        break;
+                    default:
+                        message = [NSString stringWithFormat:@"The server responded '%@' and the error reported was '%@'", [NSHTTPURLResponse localizedStringForStatusCode:response.statusCode], [error localizedDescription]];
+                        break;
+                }
+                
+                NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"Error Getting Note", @"Title", message, @"Message", nil];
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"NetworkError" object:self userInfo:userInfo];
+            }];
+        }
     } else {
         //offline
     }
@@ -516,37 +506,39 @@
     
     dispatch_group_t group = dispatch_group_create();
     [notesToAdd enumerateObjectsUsingBlock:^(NSNumber *noteId, NSUInteger idx, BOOL *stop) {
-        dispatch_group_enter(group);
         __block Note *note = [self noteWithId:noteId];
-        NSDictionary *params = @{@"content": note.content};
-        [[OCAPIClient sharedClient] POST:@"notes" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
-            //NSLog(@"Note: %@", responseObject);
-            @synchronized(successfulAdditions) {
-                NSDictionary *noteDict = (NSDictionary*)responseObject;
-                Note *responseNote = [self noteWithId:[noteDict objectForKey:@"id"]];
-                if (responseNote) {
-                    responseNote.title = [noteDict objectForKey:@"title"];
-                    responseNote.content = [noteDict objectForKeyNotNull:@"content" fallback:@""];
-                    responseNote.modified = [noteDict objectForKey:@"modified"];
-                    [self.context processPendingChanges];
+        if (note) {
+            dispatch_group_enter(group);
+            NSDictionary *params = @{@"content": note.content};
+            [[OCAPIClient sharedClient] POST:@"notes" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+                //NSLog(@"Note: %@", responseObject);
+                @synchronized(successfulAdditions) {
+                    NSDictionary *noteDict = (NSDictionary*)responseObject;
+                    Note *responseNote = [self noteWithId:[noteDict objectForKey:@"id"]];
+                    if (responseNote) {
+                        responseNote.title = [noteDict objectForKey:@"title"];
+                        responseNote.content = [noteDict objectForKeyNotNull:@"content" fallback:@""];
+                        responseNote.modified = [noteDict objectForKey:@"modified"];
+                        [self.context processPendingChanges];
+                    }
+                    [successfulAdditions addObject:responseNote.myId];
                 }
-                [successfulAdditions addObject:responseNote.myId];
-            }
-            dispatch_group_leave(group);
-        } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            //TODO: Determine what to do with failures.
-            NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
-            NSString *message;
-            switch (response.statusCode) {
-                default:
-                    message = [NSString stringWithFormat:@"The server responded '%@' and the error reported was '%@'", [NSHTTPURLResponse localizedStringForStatusCode:response.statusCode], [error localizedDescription]];
-                    break;
-            }
-            
-            NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"Error Adding Note", @"Title", message, @"Message", nil];
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"NetworkError" object:self userInfo:userInfo];
-            [failedAdditions addObject:note.myId];
-        }];
+                dispatch_group_leave(group);
+            } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                //TODO: Determine what to do with failures.
+                NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
+                NSString *message;
+                switch (response.statusCode) {
+                    default:
+                        message = [NSString stringWithFormat:@"The server responded '%@' and the error reported was '%@'", [NSHTTPURLResponse localizedStringForStatusCode:response.statusCode], [error localizedDescription]];
+                        break;
+                }
+                
+                NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"Error Adding Note", @"Title", message, @"Message", nil];
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"NetworkError" object:self userInfo:userInfo];
+                [failedAdditions addObject:note.myId];
+            }];
+        }
     }];
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
         [notesToAdd removeObjectsInArray:successfulAdditions];
