@@ -11,6 +11,7 @@
 #import "OCNotesHelper.h"
 #import "NSSplitView+SaveLayout.h"
 #import "OCEditorSettings.h"
+#import "OCNote.h"
 
 @interface OCAppDelegate ()
 
@@ -41,8 +42,8 @@
     [mySubview setTranslatesAutoresizingMaskIntoConstraints:NO];
     [[self.notesWindowController.window contentView] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[mySubview]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(mySubview)]];
     [[self.notesWindowController.window contentView] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[mySubview]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(mySubview)]];
-    self.notesViewController.context = [[OCNotesHelper sharedHelper] context];
-    [self.notesViewController.notesArrayController fetch:self.notesViewController];
+    //self.notesViewController.context = [[OCNotesHelper sharedHelper] context];
+    [self.notesViewController.notesArrayController setContent:[OCNote allInstances]];
     [self.notesViewController.tableView reloadData];
     [self.notesViewController.tableView setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleSourceList];
     
@@ -187,7 +188,7 @@
     settings.font = newFont;
     
     NSLog(@"Saving myself");
-    NSURL *saveUrl = [[OCNotesHelper sharedHelper] applicationFilesDirectory];
+    NSURL *saveUrl = [[OCNotesHelper sharedHelper] documentsDirectoryURL];
     
     saveUrl = [saveUrl URLByAppendingPathComponent:@"settings" isDirectory:NO];
     saveUrl = [saveUrl URLByAppendingPathExtension:@"plist"];

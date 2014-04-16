@@ -8,7 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 #import "OCDateTransformer.h"
-#import "Note.h"
 
 @interface OCNotesViewController : NSViewController <NSTextFieldDelegate>
 

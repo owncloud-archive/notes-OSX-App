@@ -8,7 +8,7 @@
 
 #import "OCNotesViewController.h"
 #import "OCNotesHelper.h"
-#import "Note.h"
+#import "OCNote.h"
 #import "OCEditorSettings.h"
 #import "NSSplitView+SaveLayout.h"
 
@@ -37,14 +37,20 @@
     [self.splitView loadLayoutWithName:@"SplitViewLayout"];
 
     self.contentTextView.textContainerInset = NSMakeSize(25, 25);
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(noteUpdated:)
-                                                 name:NSManagedObjectContextDidSaveNotification
-                                               object:nil];
-    
+
     [self updateFont];
+    [self reloadNotes:nil];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(reloadNotes:) name:FCModelAnyChangeNotification object:OCNote.class];
 }
+
+- (void)reloadNotes:(NSNotification *)notification
+{
+    [self.notesArrayController setContent:[OCNote instancesOrderedBy:@"modified DESC"]];
+    //NSLog(@"Reloading with %lu notes", (unsigned long) self.notesArrayController..count);
+    [self.tableView reloadData];
+    [self noteUpdated:notification];
+}
+
 
 - (IBAction)doSync:(id)sender {
     [[OCNotesHelper sharedHelper] sync];
@@ -55,16 +61,16 @@
 }
 
 - (IBAction)doDelete:(id)sender {
-    Note *noteToDelete = nil;
+    OCNote *noteToDelete = nil;
     if ([[self.notesArrayController selectedObjects] count] > 0) {
-        noteToDelete = (Note*)[[self.notesArrayController selectedObjects] objectAtIndex:0];
+        noteToDelete = (OCNote*)[[self.notesArrayController selectedObjects] objectAtIndex:0];
         [[OCNotesHelper sharedHelper] deleteNote:noteToDelete];
     }
 }
 
 - (IBAction)doExport:(id)sender {
     if ([[self.notesArrayController selectedObjects] count] > 0) {
-        __block Note *noteToExport = (Note*)[[self.notesArrayController selectedObjects] objectAtIndex:0];
+        __block OCNote *noteToExport = (OCNote*)[[self.notesArrayController selectedObjects] objectAtIndex:0];
         
         NSSavePanel* savePanel = [NSSavePanel savePanel];
         savePanel.title = @"Export note as...";
@@ -124,7 +130,7 @@
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification {
     [self.tableCellView bind:NSSelectedObjectBinding toObject:self.notesArrayController withKeyPath:@"selection" options:nil];
-    Note *note = [[self.notesArrayController selectedObjects] firstObject];
+    OCNote *note = [[self.notesArrayController selectedObjects] firstObject];
     NSLog(@"Selected Row: %ld Title %@", (long)self.tableView.selectedRow, note.title);
 
     [[OCNotesHelper sharedHelper] getNote:note];
@@ -134,7 +140,7 @@
 }
 
 - (NSArray *)idSortDescriptor {
-    return @[[NSSortDescriptor sortDescriptorWithKey:@"myId" ascending:NO]];
+    return @[[NSSortDescriptor sortDescriptorWithKey:@"modified" ascending:NO]];
 }
 
 #pragma mark - Text View Delegate
@@ -149,12 +155,12 @@
 
 - (void)updateText:(NSTimer*)timer {
     NSLog(@"Ready to update text");
-    Note *noteToUpdate = nil;
+    OCNote *noteToUpdate = nil;
     if ([[self.notesArrayController selectedObjects] count] > 0) {
         selection = self.contentTextView.selectedRange;
         clipOrigin = self.contentTextView.enclosingScrollView.contentView.bounds.origin;
         currentResponder = self.contentTextView.window.firstResponder;
-        noteToUpdate = (Note*)[[self.notesArrayController selectedObjects] objectAtIndex:0];
+        noteToUpdate = (OCNote*)[[self.notesArrayController selectedObjects] objectAtIndex:0];
         [[OCNotesHelper sharedHelper] updateNote:noteToUpdate];
     }
 }
@@ -170,7 +176,7 @@
 }
 
 - (void)updateFont {
-    NSURL *saveUrl = [[OCNotesHelper sharedHelper] applicationFilesDirectory];
+    NSURL *saveUrl = [[OCNotesHelper sharedHelper] documentsDirectoryURL];
     saveUrl = [saveUrl URLByAppendingPathComponent:@"settings" isDirectory:NO];
     saveUrl = [saveUrl URLByAppendingPathExtension:@"plist"];
     if ([[NSFileManager defaultManager] fileExistsAtPath:[saveUrl path]]) {

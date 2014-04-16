@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D01D201B18FF2DE2008407C4 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = D01D201118FF2DE2008407C4 /* FMDatabase.m */; };
+		D01D201C18FF2DE2008407C4 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D01D201318FF2DE2008407C4 /* FMDatabaseAdditions.m */; };
+		D01D201D18FF2DE2008407C4 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = D01D201518FF2DE2008407C4 /* FMDatabasePool.m */; };
+		D01D201E18FF2DE2008407C4 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D01D201718FF2DE2008407C4 /* FMDatabaseQueue.m */; };
+		D01D201F18FF2DE2008407C4 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = D01D201A18FF2DE2008407C4 /* FMResultSet.m */; };
+		D01D202718FF2DED008407C4 /* FCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D01D202218FF2DED008407C4 /* FCModel.m */; };
+		D01D202818FF2DED008407C4 /* FCModelCachedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D01D202418FF2DED008407C4 /* FCModelCachedObject.m */; };
+		D01D202918FF2DED008407C4 /* FCModelDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D01D202618FF2DED008407C4 /* FCModelDatabaseQueue.m */; };
+		D01D202C18FF3200008407C4 /* OCNote.m in Sources */ = {isa = PBXBuildFile; fileRef = D01D202A18FF3200008407C4 /* OCNote.m */; };
+		D01D202E18FF34C2008407C4 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D01D202D18FF34C2008407C4 /* libsqlite3.dylib */; };
 		D022578E189F20F90038232A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D022578D189F20F90038232A /* Cocoa.framework */; };
 		D0225798189F20F90038232A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0225796189F20F90038232A /* InfoPlist.strings */; };
 		D022579A189F20F90038232A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0225799189F20F90038232A /* main.m */; };
@@ -20,7 +30,6 @@
 		D02257BB189F20F90038232A /* CloudNotesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D02257BA189F20F90038232A /* CloudNotesTests.m */; };
 		D02257C718A1C3EF0038232A /* OCNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D02257C518A1C3EF0038232A /* OCNotesViewController.m */; };
 		D02257C818A1C3EF0038232A /* OCNotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D02257C618A1C3EF0038232A /* OCNotesViewController.xib */; };
-		D02257D118A1D2F90038232A /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = D02257CB18A1D2F90038232A /* Note.m */; };
 		D02257D218A1D2F90038232A /* OCAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D02257CD18A1D2F90038232A /* OCAPIClient.m */; };
 		D02257D318A1D2F90038232A /* OCNotesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D02257CF18A1D2F90038232A /* OCNotesHelper.m */; };
 		D02257E818A1D3640038232A /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D02257D618A1D3640038232A /* AFHTTPRequestOperation.m */; };
@@ -36,7 +45,6 @@
 		D02257F818A1DB6E0038232A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D02257F718A1DB6E0038232A /* SystemConfiguration.framework */; };
 		D02257FA18A1DB7A0038232A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D02257F918A1DB7A0038232A /* Security.framework */; };
 		D02257FC18A1DB840038232A /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D02257FB18A1DB840038232A /* CoreServices.framework */; };
-		D02257FF18A457E60038232A /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D02257FD18A457E50038232A /* Notes.xcdatamodeld */; };
 		D022580218A5B4260038232A /* NSSplitView+SaveLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D022580118A5B4260038232A /* NSSplitView+SaveLayout.m */; };
 		D022581018A6CC950038232A /* OCPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D022580E18A6CC950038232A /* OCPrefsWindowController.m */; };
 		D022581118A6CC950038232A /* OCPrefsWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D022580F18A6CC950038232A /* OCPrefsWindowController.xib */; };
@@ -59,10 +67,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D01D201018FF2DE2008407C4 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		D01D201118FF2DE2008407C4 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		D01D201218FF2DE2008407C4 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		D01D201318FF2DE2008407C4 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		D01D201418FF2DE2008407C4 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		D01D201518FF2DE2008407C4 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		D01D201618FF2DE2008407C4 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		D01D201718FF2DE2008407C4 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		D01D201818FF2DE2008407C4 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		D01D201918FF2DE2008407C4 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		D01D201A18FF2DE2008407C4 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		D01D202118FF2DED008407C4 /* FCModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCModel.h; sourceTree = "<group>"; };
+		D01D202218FF2DED008407C4 /* FCModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCModel.m; sourceTree = "<group>"; };
+		D01D202318FF2DED008407C4 /* FCModelCachedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCModelCachedObject.h; sourceTree = "<group>"; };
+		D01D202418FF2DED008407C4 /* FCModelCachedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCModelCachedObject.m; sourceTree = "<group>"; };
+		D01D202518FF2DED008407C4 /* FCModelDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCModelDatabaseQueue.h; sourceTree = "<group>"; };
+		D01D202618FF2DED008407C4 /* FCModelDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCModelDatabaseQueue.m; sourceTree = "<group>"; };
+		D01D202A18FF3200008407C4 /* OCNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCNote.m; sourceTree = "<group>"; };
+		D01D202B18FF3200008407C4 /* OCNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCNote.h; sourceTree = "<group>"; };
+		D01D202D18FF34C2008407C4 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		D022578A189F20F90038232A /* CloudNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D022578D189F20F90038232A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D0225790189F20F90038232A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		D0225791189F20F90038232A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D0225792189F20F90038232A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D0225795189F20F90038232A /* CloudNotes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CloudNotes-Info.plist"; sourceTree = "<group>"; };
 		D0225797189F20F90038232A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -81,8 +108,6 @@
 		D02257C418A1C3EF0038232A /* OCNotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCNotesViewController.h; sourceTree = "<group>"; };
 		D02257C518A1C3EF0038232A /* OCNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCNotesViewController.m; sourceTree = "<group>"; };
 		D02257C618A1C3EF0038232A /* OCNotesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OCNotesViewController.xib; sourceTree = "<group>"; };
-		D02257CA18A1D2F90038232A /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
-		D02257CB18A1D2F90038232A /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		D02257CC18A1D2F90038232A /* OCAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCAPIClient.h; sourceTree = "<group>"; };
 		D02257CD18A1D2F90038232A /* OCAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCAPIClient.m; sourceTree = "<group>"; };
 		D02257CE18A1D2F90038232A /* OCNotesHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCNotesHelper.h; sourceTree = "<group>"; };
@@ -111,7 +136,6 @@
 		D02257F718A1DB6E0038232A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D02257F918A1DB7A0038232A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D02257FB18A1DB840038232A /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
-		D02257FE18A457E60038232A /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
 		D022580018A5B4260038232A /* NSSplitView+SaveLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSplitView+SaveLayout.h"; sourceTree = "<group>"; };
 		D022580118A5B4260038232A /* NSSplitView+SaveLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSplitView+SaveLayout.m"; sourceTree = "<group>"; };
 		D022580D18A6CC950038232A /* OCPrefsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCPrefsWindowController.h; sourceTree = "<group>"; };
@@ -135,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D01D202E18FF34C2008407C4 /* libsqlite3.dylib in Frameworks */,
 				D02257FC18A1DB840038232A /* CoreServices.framework in Frameworks */,
 				D02257FA18A1DB7A0038232A /* Security.framework in Frameworks */,
 				D02257F818A1DB6E0038232A /* SystemConfiguration.framework in Frameworks */,
@@ -154,9 +179,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D01D200F18FF2DE2008407C4 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				D01D201018FF2DE2008407C4 /* FMDatabase.h */,
+				D01D201118FF2DE2008407C4 /* FMDatabase.m */,
+				D01D201218FF2DE2008407C4 /* FMDatabaseAdditions.h */,
+				D01D201318FF2DE2008407C4 /* FMDatabaseAdditions.m */,
+				D01D201418FF2DE2008407C4 /* FMDatabasePool.h */,
+				D01D201518FF2DE2008407C4 /* FMDatabasePool.m */,
+				D01D201618FF2DE2008407C4 /* FMDatabaseQueue.h */,
+				D01D201718FF2DE2008407C4 /* FMDatabaseQueue.m */,
+				D01D201818FF2DE2008407C4 /* FMDB.h */,
+				D01D201918FF2DE2008407C4 /* FMResultSet.h */,
+				D01D201A18FF2DE2008407C4 /* FMResultSet.m */,
+			);
+			name = fmdb;
+			path = FMDB/src/fmdb;
+			sourceTree = "<group>";
+		};
+		D01D202018FF2DED008407C4 /* FCModel */ = {
+			isa = PBXGroup;
+			children = (
+				D01D202118FF2DED008407C4 /* FCModel.h */,
+				D01D202218FF2DED008407C4 /* FCModel.m */,
+				D01D202318FF2DED008407C4 /* FCModelCachedObject.h */,
+				D01D202418FF2DED008407C4 /* FCModelCachedObject.m */,
+				D01D202518FF2DED008407C4 /* FCModelDatabaseQueue.h */,
+				D01D202618FF2DED008407C4 /* FCModelDatabaseQueue.m */,
+			);
+			name = FCModel;
+			path = FCModel/FCModel;
+			sourceTree = "<group>";
+		};
 		D0225781189F20F90038232A = {
 			isa = PBXGroup;
 			children = (
+				D01D202018FF2DED008407C4 /* FCModel */,
+				D01D200F18FF2DE2008407C4 /* fmdb */,
 				D022581218A6F2CD0038232A /* PDKeychainBindingsController */,
 				D02257D418A1D3640038232A /* AFNetworking */,
 				D0225793189F20F90038232A /* CloudNotes */,
@@ -178,6 +238,7 @@
 		D022578C189F20F90038232A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D01D202D18FF34C2008407C4 /* libsqlite3.dylib */,
 				D02257FB18A1DB840038232A /* CoreServices.framework */,
 				D02257F918A1DB7A0038232A /* Security.framework */,
 				D02257F718A1DB6E0038232A /* SystemConfiguration.framework */,
@@ -192,7 +253,6 @@
 			isa = PBXGroup;
 			children = (
 				D0225790189F20F90038232A /* AppKit.framework */,
-				D0225791189F20F90038232A /* CoreData.framework */,
 				D0225792189F20F90038232A /* Foundation.framework */,
 			);
 			name = "Other Frameworks";
@@ -201,9 +261,8 @@
 		D0225793189F20F90038232A /* CloudNotes */ = {
 			isa = PBXGroup;
 			children = (
-				D02257FD18A457E50038232A /* Notes.xcdatamodeld */,
-				D02257CA18A1D2F90038232A /* Note.h */,
-				D02257CB18A1D2F90038232A /* Note.m */,
+				D01D202A18FF3200008407C4 /* OCNote.m */,
+				D01D202B18FF3200008407C4 /* OCNote.h */,
 				D02257CC18A1D2F90038232A /* OCAPIClient.h */,
 				D02257CD18A1D2F90038232A /* OCAPIClient.m */,
 				D02257CE18A1D2F90038232A /* OCNotesHelper.h */,
@@ -409,24 +468,31 @@
 				D02257C718A1C3EF0038232A /* OCNotesViewController.m in Sources */,
 				D02257A1189F20F90038232A /* OCAppDelegate.m in Sources */,
 				D02257EF18A1D3640038232A /* AFURLResponseSerialization.m in Sources */,
-				D02257D118A1D2F90038232A /* Note.m in Sources */,
+				D01D202918FF2DED008407C4 /* FCModelDatabaseQueue.m in Sources */,
+				D01D202C18FF3200008407C4 /* OCNote.m in Sources */,
 				D02257EE18A1D3640038232A /* AFURLRequestSerialization.m in Sources */,
-				D02257FF18A457E60038232A /* Notes.xcdatamodeld in Sources */,
 				D022580218A5B4260038232A /* NSSplitView+SaveLayout.m in Sources */,
 				D02257EC18A1D3640038232A /* AFSecurityPolicy.m in Sources */,
 				D02257E818A1D3640038232A /* AFHTTPRequestOperation.m in Sources */,
 				D02257F018A1D3640038232A /* AFURLSessionManager.m in Sources */,
 				D0EB38EF18B175D900379F3F /* OCNotesWindowController.m in Sources */,
 				D022581B18A70E010038232A /* OCDateTransformer.m in Sources */,
+				D01D201D18FF2DE2008407C4 /* FMDatabasePool.m in Sources */,
+				D01D201B18FF2DE2008407C4 /* FMDatabase.m in Sources */,
 				D022579A189F20F90038232A /* main.m in Sources */,
 				D0EB38E818B0577A00379F3F /* OCEditorSettings.m in Sources */,
+				D01D201E18FF2DE2008407C4 /* FMDatabaseQueue.m in Sources */,
+				D01D201F18FF2DE2008407C4 /* FMResultSet.m in Sources */,
 				D02257D318A1D2F90038232A /* OCNotesHelper.m in Sources */,
+				D01D202718FF2DED008407C4 /* FCModel.m in Sources */,
 				D022581718A6F2CD0038232A /* PDKeychainBindings.m in Sources */,
 				D02257F618A1D9AA0038232A /* NSDictionary+HandleNull.m in Sources */,
 				D02257EA18A1D3640038232A /* AFHTTPSessionManager.m in Sources */,
 				D02257D218A1D2F90038232A /* OCAPIClient.m in Sources */,
+				D01D201C18FF2DE2008407C4 /* FMDatabaseAdditions.m in Sources */,
 				D02257EB18A1D3640038232A /* AFNetworkReachabilityManager.m in Sources */,
 				D022581018A6CC950038232A /* OCPrefsWindowController.m in Sources */,
+				D01D202818FF2DED008407C4 /* FCModelCachedObject.m in Sources */,
 				D022581818A6F2CD0038232A /* PDKeychainBindingsController.m in Sources */,
 				D02257E918A1D3640038232A /* AFHTTPRequestOperationManager.m in Sources */,
 			);
@@ -558,6 +624,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CloudNotes/CloudNotes-Prefix.pch";
@@ -572,6 +639,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CloudNotes/CloudNotes-Prefix.pch";
@@ -653,19 +721,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		D02257FD18A457E50038232A /* Notes.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				D02257FE18A457E60038232A /* Notes.xcdatamodel */,
-			);
-			currentVersion = D02257FE18A457E60038232A /* Notes.xcdatamodel */;
-			path = Notes.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = D0225782189F20F90038232A /* Project object */;
 }
