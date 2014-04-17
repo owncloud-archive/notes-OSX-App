@@ -201,7 +201,7 @@
                     if (!ocNote) { //don't re-add a deleted note (it will be deleted from the server below).
                         if (![notesToDelete containsObject:[noteDict objectForKey:@"id"]]) {
                             ocNote = [OCNote new];
-                            ocNote.id = [[noteDict objectForKey:@"id"] longValue];
+                            ocNote.id = [[noteDict objectForKey:@"id"] int32Value];
                             ocNote.modified = [[noteDict objectForKey:@"modified"] doubleValue];
                             ocNote.title = [noteDict objectForKey:@"title"];
                             ocNote.content = [noteDict objectForKeyNotNull:@"content" fallback:@""];
@@ -583,7 +583,7 @@
                 //NSLog(@"Note: %@", responseObject);
                 @synchronized(successfulAdditions) {
                     NSDictionary *noteDict = (NSDictionary*)responseObject;
-                    ocNote.id = [[noteDict objectForKey:@"id"] integerValue];
+                    ocNote.id = [[noteDict objectForKey:@"id"] int32Value];
                     ocNote.title = [noteDict objectForKey:@"title"];
                     ocNote.content = [noteDict objectForKeyNotNull:@"content" fallback:@""];
                     ocNote.modified = [[noteDict objectForKey:@"modified"] doubleValue];
