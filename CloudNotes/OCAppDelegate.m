@@ -35,6 +35,10 @@
 {
     // Insert code here to initialize your application
     
+    //Clear prefs for debug.
+    //NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    //[[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+    
     self.notesWindowController = [[OCNotesWindowController alloc] initWithWindowNibName:@"OCNotesWindowController"];
     self.notesViewController = [[OCNotesViewController alloc] initWithNibName:@"OCNotesViewController" bundle:nil];
     NSView *mySubview = self.notesViewController.view;
@@ -46,13 +50,15 @@
     [self.notesViewController.notesArrayController setContent:[OCNote allInstances]];
     [self.notesViewController.tableView reloadData];
     [self.notesViewController.tableView setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleSourceList];
+    NSLog(@"Server: %@", [[NSUserDefaults standardUserDefaults] stringForKey:@"Server"]);
+    if ([[NSUserDefaults standardUserDefaults] stringForKey:@"Server"].length == 0) {
+        [self doPreferences:nil];
+    }    
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"SyncOnStart"]) {
         [self.notesViewController doSync:nil];
     }
-    if ([[NSUserDefaults standardUserDefaults] stringForKey:@"Server"].length == 0) {
-        [self doPreferences:nil];
-    }
+
     [self.notesWindowController.window setAutorecalculatesContentBorderThickness:YES forEdge:NSMinYEdge];
 	[self.notesWindowController.window setContentBorderThickness:30 forEdge:NSMinYEdge];
     

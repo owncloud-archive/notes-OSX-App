@@ -21,7 +21,7 @@
 
 - (void)loadLayoutWithName:(NSString *)defaultName {
     NSMutableArray *rectStrings = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:defaultName]];
-    if (rectStrings) {
+    if (rectStrings.count) {
         [self.subviews enumerateObjectsUsingBlock:^(NSView *view, NSUInteger idx, BOOL *stop) {
             view.frame = NSRectFromString([rectStrings objectAtIndex:idx]);
         }];

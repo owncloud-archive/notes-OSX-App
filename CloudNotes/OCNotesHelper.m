@@ -158,7 +158,16 @@
     // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "com.peterandlinda.CloudNotes" in the user's Application Support directory.
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSURL *appSupportURL = [[fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask] lastObject];
-    return [appSupportURL URLByAppendingPathComponent:@"com.peterandlinda.CloudNotes"];
+    appSupportURL = [appSupportURL URLByAppendingPathComponent:@"com.peterandlinda.CloudNotes"];
+    
+    BOOL isFolder;
+    NSLog(@"URL: %@", appSupportURL);
+    if (![fileManager fileExistsAtPath:appSupportURL.path isDirectory:&isFolder])
+    {
+        NSLog(@"IsFolder: %d", isFolder);
+        [[NSFileManager defaultManager] createDirectoryAtURL:appSupportURL withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    return appSupportURL;
 }
 
 - (void)savePrefs {
@@ -201,7 +210,7 @@
                     if (!ocNote) { //don't re-add a deleted note (it will be deleted from the server below).
                         if (![notesToDelete containsObject:[noteDict objectForKey:@"id"]]) {
                             ocNote = [OCNote new];
-                            ocNote.id = [[noteDict objectForKey:@"id"] int32Value];
+                            ocNote.id = [[noteDict objectForKey:@"id"] intValue];
                             ocNote.modified = [[noteDict objectForKey:@"modified"] doubleValue];
                             ocNote.title = [noteDict objectForKey:@"title"];
                             ocNote.content = [noteDict objectForKeyNotNull:@"content" fallback:@""];
@@ -583,7 +592,7 @@
                 //NSLog(@"Note: %@", responseObject);
                 @synchronized(successfulAdditions) {
                     NSDictionary *noteDict = (NSDictionary*)responseObject;
-                    ocNote.id = [[noteDict objectForKey:@"id"] int32Value];
+                    ocNote.id = [[noteDict objectForKey:@"id"] intValue];
                     ocNote.title = [noteDict objectForKey:@"title"];
                     ocNote.content = [noteDict objectForKeyNotNull:@"content" fallback:@""];
                     ocNote.modified = [[noteDict objectForKey:@"modified"] doubleValue];
