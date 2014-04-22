@@ -17,6 +17,7 @@
     NSRange selection;
     CGPoint clipOrigin;
     NSResponder *currentResponder;
+    NSInteger currentNoteId;
 }
 
 @end
@@ -28,6 +29,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Initialization code here.
+        currentNoteId = 0;
     }
     return self;
 }
@@ -135,7 +137,10 @@
 
     [[OCNotesHelper sharedHelper] getNote:note];
     self.contentTextView.string = note.content;
-    selection = NSMakeRange(0, 0);
+    if (currentNoteId != note.id) {
+        selection = NSMakeRange(0, 0);
+    }
+    currentNoteId = note.id;
     [self updateFont];
 }
 
@@ -155,11 +160,11 @@
 
 - (void)updateText:(NSTimer*)timer {
     NSLog(@"Ready to update text");
+    selection = self.contentTextView.selectedRange;
+    clipOrigin = self.contentTextView.enclosingScrollView.contentView.bounds.origin;
+    currentResponder = self.contentTextView.window.firstResponder;
     OCNote *noteToUpdate = nil;
     if ([[self.notesArrayController selectedObjects] count] > 0) {
-        selection = self.contentTextView.selectedRange;
-        clipOrigin = self.contentTextView.enclosingScrollView.contentView.bounds.origin;
-        currentResponder = self.contentTextView.window.firstResponder;
         noteToUpdate = (OCNote*)[[self.notesArrayController selectedObjects] objectAtIndex:0];
         [[OCNotesHelper sharedHelper] updateNote:noteToUpdate];
     }
