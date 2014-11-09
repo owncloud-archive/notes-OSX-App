@@ -66,6 +66,7 @@ static dispatch_once_t oncePredicate = 0;
 
     [self setRequestSerializer:[AFJSONRequestSerializer serializer]];
     [self.requestSerializer setAuthorizationHeaderFieldWithUsername:[[PDKeychainBindings sharedKeychainBindings] objectForKey:@"Username"] password:[[PDKeychainBindings sharedKeychainBindings] objectForKey:@"Password"]];
+    self.operationQueue.maxConcurrentOperationCount = 1;
     [self.reachabilityManager startMonitoring];
     
     return self;

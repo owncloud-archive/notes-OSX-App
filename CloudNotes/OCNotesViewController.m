@@ -42,6 +42,8 @@
 
     [self updateFont];
     [self reloadNotes:nil];
+    NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:0];
+    [self.tableView selectRowIndexes:indexSet byExtendingSelection:NO];
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(reloadNotes:) name:FCModelAnyChangeNotification object:OCNote.class];
 }
 
@@ -60,6 +62,9 @@
 
 - (IBAction)doAdd:(id)sender {
     [[OCNotesHelper sharedHelper] addNote:@""];
+    NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:0];
+    [self.tableView selectRowIndexes:indexSet byExtendingSelection:NO];
+    [self.contentTextView.window makeFirstResponder:self.contentTextView];
 }
 
 - (IBAction)doDelete:(id)sender {

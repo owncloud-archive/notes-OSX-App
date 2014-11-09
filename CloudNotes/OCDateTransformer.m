@@ -21,7 +21,7 @@
         dateFormat.dateStyle = NSDateFormatterShortStyle;
         dateFormat.timeStyle = NSDateFormatterNoStyle;
         dateFormat.doesRelativeDateFormatting = YES;
-        return [NSString stringWithFormat:@"Modified: %@", [dateFormat stringFromDate:date]];
+        return [dateFormat stringFromDate:date];
     }
     return value;
 }
