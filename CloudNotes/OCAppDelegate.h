@@ -7,7 +7,6 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <CoreData/CoreData.h>
 #import "OCNotesViewController.h"
 #import "OCPrefsWindowController.h"
 
@@ -15,9 +14,6 @@
 
 @property (assign) IBOutlet NSWindow *window;
 
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) OCNotesViewController *notesViewController;
 @property (strong, nonatomic, readonly) OCPrefsWindowController *prefsWindowController;
 
