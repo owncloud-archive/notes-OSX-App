@@ -17,7 +17,6 @@
 @property (strong, nonatomic) OCNotesViewController *notesViewController;
 @property (strong, nonatomic, readonly) OCPrefsWindowController *prefsWindowController;
 
-- (IBAction)saveAction:(id)sender;
 - (IBAction)doPreferences:(id)sender;
 - (IBAction)doNew:(id)sender;
 - (IBAction)doDelete:(id)sender;
